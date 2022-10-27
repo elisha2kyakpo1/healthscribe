@@ -1,0 +1,96 @@
+  #Hero {
+    position: relative;
+    background-color: #008080;
+    /* background: linear-gradient(#47cc76,#6AD1BE,#40B4C7); */
+    background-size: cover;
+    background-repeat: 'no-repeat';
+    color: #32325d;
+  }
+  .para {
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .welcome {
+    min-height: 80vh;
+  }
+
+  .get-start {
+    color: white;
+    border: 1px solid white;
+    background-color: #F78104;
+    border-radius: 30px;
+    padding: 1rem 1.5rem;
+    font-weight: 700;
+  }
+
+  .footer {
+    padding: 6rem 0;
+  }
+
+  .logo {
+    width: 150px;
+    height: 40;
+  }
+
+  .third {
+    background-color: #d9d9d9;
+  }
+  
+  .login {
+    color: #32325d;
+    border: none;
+    font-weight: 700;
+    padding: 1rem 1.5rem;
+    background: transparent;
+  }
+
+
+  h2, h3 {
+    color: #32325D;
+}
+h6 {
+    color: #F78104;
+    font-weight: 800;
+}
+
+  .bottom {
+    background-color: #fff 
+  }
+  
+  .nav-link.active {
+    text-decoration: underline;
+  }
+  
+  .header {
+    background-color: #008080;
+  }
+  
+  .para {
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .people {
+    position: absolute;
+    right: -22.5%;
+    bottom: -1px;
+    max-width: 100%;
+  }
+
+  #second p {
+      line-height: 2em;
+    }
+
+  #third  p {
+      line-height: 2.5em;
+      color: #32325d;
+    }
+  
+  #fourth p {
+      line-height: 2em;
+    }
