@@ -1,1 +1,1 @@
-json.array! @symptoms, partial: "symptoms/symptom", as: :symptom
+json.array! @symptoms, partial: 'symptoms/symptom', as: :symptom

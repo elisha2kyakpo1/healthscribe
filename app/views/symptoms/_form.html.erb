@@ -13,12 +13,12 @@
 
   <div>
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: 'form-control' %>
   </div>
 
   <div>
     <%= form.label :intensity, style: "display: block" %>
-    <%= form.number_field :intensity %>
+    <%= form.select :integrity, Symptom.intensities.keys %>
   </div>
 
   <div>
@@ -34,11 +34,6 @@
   <div>
     <%= form.label :comment, style: "display: block" %>
     <%= form.text_area :comment %>
-  </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
   </div>
 
   <div>

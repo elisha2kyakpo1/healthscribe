@@ -1,1 +1,1 @@
-json.partial! "symptoms/symptom", symptom: @symptom
+json.partial! 'symptoms/symptom', symptom: @symptom

@@ -1,14 +1,15 @@
 class SymptomsController < ApplicationController
-  before_action :set_symptom, only: %i[ show edit update destroy ]
+  before_action :set_symptom, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /symptoms or /symptoms.json
   def index
-    @symptoms = Symptom.all
+    @user = current_user
+    @symptoms = Symptom.all.order('created_at DESC').where(user: current_user).includes(:user)
   end
 
   # GET /symptoms/1 or /symptoms/1.json
-  def show
-  end
+  def show; end
 
   # GET /symptoms/new
   def new
@@ -16,16 +17,15 @@ class SymptomsController < ApplicationController
   end
 
   # GET /symptoms/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /symptoms or /symptoms.json
   def create
-    @symptom = Symptom.new(symptom_params)
+    @symptom = current_user.symptoms.build(symptom_params)
 
     respond_to do |format|
       if @symptom.save
-        format.html { redirect_to symptom_url(@symptom), notice: "Symptom was successfully created." }
+        format.html { redirect_to symptom_url(@symptom), notice: 'Symptom was successfully created.' }
         format.json { render :show, status: :created, location: @symptom }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class SymptomsController < ApplicationController
   def update
     respond_to do |format|
       if @symptom.update(symptom_params)
-        format.html { redirect_to symptom_url(@symptom), notice: "Symptom was successfully updated." }
+        format.html { redirect_to symptom_url(@symptom), notice: 'Symptom was successfully updated.' }
         format.json { render :show, status: :ok, location: @symptom }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +52,20 @@ class SymptomsController < ApplicationController
     @symptom.destroy
 
     respond_to do |format|
-      format.html { redirect_to symptoms_url, notice: "Symptom was successfully destroyed." }
+      format.html { redirect_to symptoms_url, notice: 'Symptom was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_symptom
-      @symptom = Symptom.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def symptom_params
-      params.require(:symptom).permit(:name, :intensity, :time, :date, :comment, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_symptom
+    @symptom = Symptom.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def symptom_params
+    params.require(:symptom).permit(:name, :intensity, :time, :date, :comment, :user_id)
+  end
 end

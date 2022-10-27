@@ -1,0 +1,66 @@
+.main-timeline-5 {
+  position: relative;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline-5::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background-color: rgb(208, 205, 196);
+  top: 0;
+  bottom: 0;
+  left: auto;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.timeline-5 {
+  position: relative;
+  background-color: inherit;
+  width: 100%;
+}
+
+h5 {
+  color: rgb(64, 91, 115);
+}
+
+p {
+  color: rgb(38, 38, 38);
+}
+
+/* The circles on the timeline */
+.timeline-5::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 14px;
+  right: 2px;
+  background-color: rgb(38, 38, 38);
+  top: 30px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the right */
+.right-5 {
+  padding: 0px 0px 5px 15px;
+  left: auto;
+}
+
+/* Fix the circle for containers on the right side */
+.right-5::after {
+  left: -10px;
+}
+
+@media (max-width: 991px) {
+  .main-timeline-5 {
+    max-width: 100%;
+  }
+}
+.gradient-custom-5 {
+  /* fallback for old browsers */
+  background-color: rgb(245, 245, 245);;
+}

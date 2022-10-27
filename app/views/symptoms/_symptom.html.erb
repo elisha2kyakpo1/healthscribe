@@ -1,32 +1,17 @@
-<div id="<%= dom_id symptom %>">
-  <p>
-    <strong>Name:</strong>
-    <%= symptom.name %>
-  </p>
-
-  <p>
-    <strong>Intensity:</strong>
-    <%= symptom.intensity %>
-  </p>
-
-  <p>
-    <strong>Time:</strong>
-    <%= symptom.time %>
-  </p>
-
-  <p>
-    <strong>Date:</strong>
-    <%= symptom.date %>
-  </p>
-
-  <p>
-    <strong>Comment:</strong>
-    <%= symptom.comment %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= symptom.user_id %>
-  </p>
-
-</div>
+<section class="gradient-custom-5">
+  <div class="container">
+    <div class="main-timeline-5">
+      <div class="timeline-5 right-5">
+        <div class="">
+          <div class="card-body p-4">
+            <h5><%= symptom.name %></h5>
+            <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= symptom.date.strftime("%F") %>|<%= symptom.time.strftime("%H:%M") %></span>
+            <p class="mt-2 mb-0"><%= symptom.comment %></p>
+            <p class="mt-2 mb-0"><%= symptom.intensity %></p>
+            <%= link_to "Show this symptom", symptom %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
