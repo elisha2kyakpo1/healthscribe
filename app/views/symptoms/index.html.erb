@@ -23,12 +23,7 @@
   <% @symptoms.each do |symptom| %>
     <%= render symptom %>
   <% end %>
+  <%= link_to "New symptom", new_symptom_path %>
 </div>
+<%#= line_chart({"2021-01-01" => 2, "2021-01-02" => 3}) %>
 
-<div>
-  <div class='post-comments-section'>
-    <%#= render partial: 'medications/medication', collection: @symptoms.medications %>
-  </div>
-</div>
-
-<%= link_to "New symptom", new_symptom_path %>

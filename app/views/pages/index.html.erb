@@ -52,7 +52,7 @@
             reiciendis asperiores quae tempore perferendis!
           </p>
           <div class="text-center my-4">
-            <%= button_to "Try now", class: 'login' %>
+            <%= link_to 'Try Now', new_user_registration_path, class: "learn" %>
           </div>
         </div>
       </div>
@@ -118,7 +118,7 @@
         <div class="container text-center text-white">
           <p class="fs-3 fw-bold">Manage your Information 24/7 from any device.</p>
           <p class="mb-4">Understanding your health has never been easier.</p>
-            <%= link_to 'Create Account', symptoms_path, class: "learn" %>
+            <%= link_to 'Create Account', new_user_registration_path, class: "learn" %>
         </div>
       </div>
     </div>

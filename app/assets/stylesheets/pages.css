@@ -32,6 +32,7 @@
   }
 
   .welcome {
+    margin-top: 5rem;
     min-height: 70vh;
   }
 
@@ -42,6 +43,14 @@
     border-radius: 30px;
     padding: 1rem 1.5rem;
     font-weight: 700;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
   }
 
   .footer {
