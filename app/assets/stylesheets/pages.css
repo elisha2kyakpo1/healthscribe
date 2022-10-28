@@ -77,9 +77,11 @@ h6 {
 
   .people {
     position: absolute;
-    right: -22.5%;
-    bottom: -1px;
     max-width: 100%;
+  }
+
+  .people-img {
+    width: 100%;
   }
 
   #second p {
