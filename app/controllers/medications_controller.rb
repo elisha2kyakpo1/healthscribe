@@ -1,5 +1,6 @@
 class MedicationsController < ApplicationController
   before_action :set_medication, only: %i[ show edit update destroy ]
+  before_action :set_symptom, only: %i[ new create ]
 
   # GET /medications or /medications.json
   def index
@@ -61,6 +62,10 @@ class MedicationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_medication
       @medication = Medication.find(params[:id])
+    end
+  
+    def set_symptom
+      @symptom = Symptom.find(params[:symptom_id])
     end
 
     # Only allow a list of trusted parameters through.

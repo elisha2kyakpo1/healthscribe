@@ -9,16 +9,16 @@
             <p class="para text-white col-11 mr-auto col-md-8 mt-1 mt-md-3">
               Keep track of your health related symptoms on all of your devices. Click learn more to see how HealthScribe works
             </p>
-            <div class="d-flex gap-5 mt-5">
-              <button></button>
+            <div class="d-flex flex-column-reverse flex-md-row flex-md-wrap align-items-center gap-5 mt-5">
+              <%= link_to 'LEARN MORE', symptoms_path, class: "learn" %>
               <div class="view">
-                <Button></button>
+                <%= link_to 'VIEW FEATURES', symptoms_path, class: "text-white view-features" %>
               </div>
             </div>
           </div>
-
-            <%= svg_tag "People", class: "people-img" %>
-
+        </div>
+        <div class="people">
+          <%= svg_tag "People", class: "people-img" %>
         </div>
 
       </div>
@@ -63,7 +63,7 @@
         <div class="mt-5 d-flex flex-column-reverse flex-md-row flex-md-wrap justify-content-between align-items-center">
           <div class="col-12 col-md-6 mb-2 mb-md-5 ">
             <div class="col-10 mx-auto">
-              <img src={Logo} class="img-fluid" alt="" />
+              <%=svg_tag "create-profile"%>
             </div>
           </div>
           <div class="col-12 col-md-6 mb-0 mb-md-5">
@@ -91,14 +91,14 @@
           </div>
           <div class="col-12 col-md-6 mt-1 my-md-5">
             <div class="col-10 mx-auto">
-              <img src={Logo} class="img-fluid" alt="" />
+              <%=svg_tag "Log-event"%>
             </div>
           </div>
         </div>
         <div class="mt-5 d-flex flex-column-reverse flex-md-row flex-md-wrap justify-content-between align-items-center">
           <div class="col-12 col-md-6 mb-2 mb-md-5 ">
             <div class="col-10 mx-auto">
-              <img src={Logo} class="img-fluid" alt="" />
+              <%=svg_tag "Insights"%>
             </div>
           </div>
           <div class="col-12 col-md-6 mb-0 mb-md-5">
@@ -115,12 +115,11 @@
       </div>
 
       <div class="bgPr footer">
-        <div class="container text-center text-light">
+        <div class="container text-center text-white">
           <p class="fs-3 fw-bold">Manage your Information 24/7 from any device.</p>
           <p class="mb-4">Understanding your health has never been easier.</p>
-            <Button></button>
+            <%= link_to 'Create Account', symptoms_path, class: "learn" %>
         </div>
       </div>
     </div>
-    <%=render "layouts/footer"%>
 </div>

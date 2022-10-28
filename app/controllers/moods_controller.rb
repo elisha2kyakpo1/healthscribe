@@ -1,5 +1,5 @@
 class MoodsController < ApplicationController
-  before_action :set_mood, only: %i[ show edit update destroy ]
+  before_action :set_mood, only: %i[show edit update destroy]
 
   # GET /moods or /moods.json
   def index
@@ -7,8 +7,7 @@ class MoodsController < ApplicationController
   end
 
   # GET /moods/1 or /moods/1.json
-  def show
-  end
+  def show; end
 
   # GET /moods/new
   def new
@@ -16,8 +15,7 @@ class MoodsController < ApplicationController
   end
 
   # GET /moods/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /moods or /moods.json
   def create
@@ -25,7 +23,7 @@ class MoodsController < ApplicationController
 
     respond_to do |format|
       if @mood.save
-        format.html { redirect_to mood_url(@mood), notice: "Mood was successfully created." }
+        format.html { redirect_to mood_url(@mood), notice: 'Mood was successfully created.' }
         format.json { render :show, status: :created, location: @mood }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class MoodsController < ApplicationController
   def update
     respond_to do |format|
       if @mood.update(mood_params)
-        format.html { redirect_to mood_url(@mood), notice: "Mood was successfully updated." }
+        format.html { redirect_to mood_url(@mood), notice: 'Mood was successfully updated.' }
         format.json { render :show, status: :ok, location: @mood }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class MoodsController < ApplicationController
     @mood.destroy
 
     respond_to do |format|
-      format.html { redirect_to moods_url, notice: "Mood was successfully destroyed." }
+      format.html { redirect_to moods_url, notice: 'Mood was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_mood
-      @mood = Mood.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def mood_params
-      params.require(:mood).permit(:name, :comment, :time, :date, :symptom_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_mood
+    @mood = Mood.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def mood_params
+    params.require(:mood).permit(:name, :comment, :time, :date, :symptom_id)
+  end
 end

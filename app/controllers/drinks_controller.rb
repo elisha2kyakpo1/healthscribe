@@ -1,5 +1,5 @@
 class DrinksController < ApplicationController
-  before_action :set_drink, only: %i[ show edit update destroy ]
+  before_action :set_drink, only: %i[show edit update destroy]
 
   # GET /drinks or /drinks.json
   def index
@@ -7,8 +7,7 @@ class DrinksController < ApplicationController
   end
 
   # GET /drinks/1 or /drinks/1.json
-  def show
-  end
+  def show; end
 
   # GET /drinks/new
   def new
@@ -16,8 +15,7 @@ class DrinksController < ApplicationController
   end
 
   # GET /drinks/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /drinks or /drinks.json
   def create
@@ -25,7 +23,7 @@ class DrinksController < ApplicationController
 
     respond_to do |format|
       if @drink.save
-        format.html { redirect_to drink_url(@drink), notice: "Drink was successfully created." }
+        format.html { redirect_to drink_url(@drink), notice: 'Drink was successfully created.' }
         format.json { render :show, status: :created, location: @drink }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class DrinksController < ApplicationController
   def update
     respond_to do |format|
       if @drink.update(drink_params)
-        format.html { redirect_to drink_url(@drink), notice: "Drink was successfully updated." }
+        format.html { redirect_to drink_url(@drink), notice: 'Drink was successfully updated.' }
         format.json { render :show, status: :ok, location: @drink }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class DrinksController < ApplicationController
     @drink.destroy
 
     respond_to do |format|
-      format.html { redirect_to drinks_url, notice: "Drink was successfully destroyed." }
+      format.html { redirect_to drinks_url, notice: 'Drink was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_drink
-      @drink = Drink.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def drink_params
-      params.require(:drink).permit(:name, :comment, :time, :date, :symptom_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_drink
+    @drink = Drink.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def drink_params
+    params.require(:drink).permit(:name, :comment, :time, :date, :symptom_id)
+  end
 end

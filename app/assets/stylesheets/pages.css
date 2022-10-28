@@ -13,8 +13,26 @@
     text-align: center;
   }
 
+  .learn {
+    background-color: rgb(255, 255, 255);
+    color: rgb(247, 129, 4);
+    border: 0;
+    border-radius: 30px;
+    padding: 1rem 1.5rem;
+    font-weight: 700;
+  }
+
+  .view-features {
+    background-color: transparent;
+    color: rgb(247, 129, 4);
+    border: 1px solid #fff;
+    border-radius: 30px;
+    padding: 1rem 1.5rem;
+    font-weight: 700;
+  }
+
   .welcome {
-    min-height: 80vh;
+    min-height: 70vh;
   }
 
   .get-start {
@@ -28,6 +46,12 @@
 
   .footer {
     padding: 6rem 0;
+    background-color: #40b4c7;
+    color: #fff;
+  }
+
+  .footer p {
+    color: #fff;
   }
 
   .logo {
@@ -67,6 +91,10 @@ h6 {
   .header {
     background-color: #008080;
   }
+
+  a:hover {
+    color: unset;
+    }
   
   .para {
     font-weight: 400;
@@ -75,9 +103,15 @@ h6 {
     text-align: center;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   .people {
     position: absolute;
     max-width: 100%;
+    bottom: 0;
+    right: -5%;
   }
 
   .people-img {

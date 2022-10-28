@@ -1,49 +1,49 @@
-require "application_system_test_case"
+require 'application_system_test_case'
 
 class MoodsTest < ApplicationSystemTestCase
   setup do
     @mood = moods(:one)
   end
 
-  test "visiting the index" do
+  test 'visiting the index' do
     visit moods_url
-    assert_selector "h1", text: "Moods"
+    assert_selector 'h1', text: 'Moods'
   end
 
-  test "should create mood" do
+  test 'should create mood' do
     visit moods_url
-    click_on "New mood"
+    click_on 'New mood'
 
-    fill_in "Comment", with: @mood.comment
-    fill_in "Date", with: @mood.date
-    fill_in "Name", with: @mood.name
-    fill_in "Symptom", with: @mood.symptom_id
-    fill_in "Time", with: @mood.time
-    click_on "Create Mood"
+    fill_in 'Comment', with: @mood.comment
+    fill_in 'Date', with: @mood.date
+    fill_in 'Name', with: @mood.name
+    fill_in 'Symptom', with: @mood.symptom_id
+    fill_in 'Time', with: @mood.time
+    click_on 'Create Mood'
 
-    assert_text "Mood was successfully created"
-    click_on "Back"
+    assert_text 'Mood was successfully created'
+    click_on 'Back'
   end
 
-  test "should update Mood" do
+  test 'should update Mood' do
     visit mood_url(@mood)
-    click_on "Edit this mood", match: :first
+    click_on 'Edit this mood', match: :first
 
-    fill_in "Comment", with: @mood.comment
-    fill_in "Date", with: @mood.date
-    fill_in "Name", with: @mood.name
-    fill_in "Symptom", with: @mood.symptom_id
-    fill_in "Time", with: @mood.time
-    click_on "Update Mood"
+    fill_in 'Comment', with: @mood.comment
+    fill_in 'Date', with: @mood.date
+    fill_in 'Name', with: @mood.name
+    fill_in 'Symptom', with: @mood.symptom_id
+    fill_in 'Time', with: @mood.time
+    click_on 'Update Mood'
 
-    assert_text "Mood was successfully updated"
-    click_on "Back"
+    assert_text 'Mood was successfully updated'
+    click_on 'Back'
   end
 
-  test "should destroy Mood" do
+  test 'should destroy Mood' do
     visit mood_url(@mood)
-    click_on "Destroy this mood", match: :first
+    click_on 'Destroy this mood', match: :first
 
-    assert_text "Mood was successfully destroyed"
+    assert_text 'Mood was successfully destroyed'
   end
 end

@@ -71,4 +71,4 @@ group :test do
   gem 'webdrivers'
 end
 
-gem "inline_svg", "~> 1.8"
+gem 'inline_svg', '~> 1.8'

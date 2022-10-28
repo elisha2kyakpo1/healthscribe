@@ -1,1 +1,1 @@
-json.partial! "moods/mood", mood: @mood
+json.partial! 'moods/mood', mood: @mood

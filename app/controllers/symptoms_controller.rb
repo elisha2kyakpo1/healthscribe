@@ -5,7 +5,8 @@ class SymptomsController < ApplicationController
   # GET /symptoms or /symptoms.json
   def index
     @user = current_user
-    @symptoms = Symptom.all.order('created_at DESC').where(user: current_user).includes(:user)
+    @symptoms = Symptom.all.order('created_at DESC').where(user: current_user).includes(:user, :medications, :moods,
+                                                                                        :foods, :drinks)
   end
 
   # GET /symptoms/1 or /symptoms/1.json
