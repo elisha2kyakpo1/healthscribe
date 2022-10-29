@@ -11,6 +11,9 @@ class MoodsController < ApplicationController
 
   # GET /moods/new
   def new
+    @user = current_user
+    @available_symptoms = @user.symptoms
+    @symptom = Symptom.find_by_id(params[:symptom_id])
     @mood = Mood.new
   end
 
@@ -19,11 +22,12 @@ class MoodsController < ApplicationController
 
   # POST /moods or /moods.json
   def create
+    @symptom = Symptom.find_by_id(params[:symptom_id])
     @mood = Mood.new(mood_params)
 
     respond_to do |format|
       if @mood.save
-        format.html { redirect_to mood_url(@mood), notice: 'Mood was successfully created.' }
+        redirect_to mood_url(@mood), notice: 'Mood was successfully created.'
         format.json { render :show, status: :created, location: @mood }
       else
         format.html { render :new, status: :unprocessable_entity }

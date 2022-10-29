@@ -1,27 +1,16 @@
-<div id="<%= dom_id mood %>">
-  <p>
-    <strong>Name:</strong>
-    <%= mood.name %>
-  </p>
-
-  <p>
-    <strong>Comment:</strong>
-    <%= mood.comment %>
-  </p>
-
-  <p>
-    <strong>Time:</strong>
-    <%= mood.time %>
-  </p>
-
-  <p>
-    <strong>Date:</strong>
-    <%= mood.date %>
-  </p>
-
-  <p>
-    <strong>Symptom:</strong>
-    <%= mood.symptom_id %>
-  </p>
-
-</div>
+<section class="gradient-custom-5">
+  <div class="container">
+    <div class="main-timeline-5">
+      <div class="timeline-5 right-5">
+        <div class="">
+          <div class="card-body p-4">
+            <h5><%= mood.name %></h5>
+            <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= mood.date.strftime("%F") %>|<%= mood.time.strftime("%H:%M") %></span>
+            <p class="mt-2 mb-0"><%= mood.comment %></p>
+            <%= link_to "Show this mood", mood %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

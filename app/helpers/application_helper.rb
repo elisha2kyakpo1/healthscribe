@@ -1,6 +1,6 @@
 module ApplicationHelper
-  def active_class(path)
-    if request.path == path
+  def active_class(link)
+    if action_name == link
       'active'
     else
       ''

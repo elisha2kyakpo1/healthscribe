@@ -11,6 +11,9 @@ class FoodsController < ApplicationController
 
   # GET /foods/new
   def new
+    @user = current_user
+    @available_symptoms = @user.symptoms
+    @symptom = Symptom.find_by_id(params[:symptom_id])
     @food = Food.new
   end
 
@@ -19,11 +22,12 @@ class FoodsController < ApplicationController
 
   # POST /foods or /foods.json
   def create
+    @symptom = Symptom.find_by_id(params[:symptom_id])
     @food = Food.new(food_params)
 
     respond_to do |format|
       if @food.save
-        format.html { redirect_to food_url(@food), notice: 'Food was successfully created.' }
+        redirect_to food_url(@food), notice: 'Food was successfully created.'
         format.json { render :show, status: :created, location: @food }
       else
         format.html { render :new, status: :unprocessable_entity }

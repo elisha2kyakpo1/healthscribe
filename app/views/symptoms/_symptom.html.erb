@@ -8,7 +8,7 @@
             <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= symptom.date.strftime("%F") %>|<%= symptom.time.strftime("%H:%M") %></span>
             <p class="mt-2 mb-0"><%= symptom.comment %></p>
             <p class="mt-2 mb-0"><%= symptom.intensity %></p>
-             <p class="mt-2 mb-0"><%= symptom.medications %></p>
+             <p class="mt-2 mb-0"><%#= symptom.medications %></p>
             <%= link_to "Show this symptom", symptom %>
           </div>
         </div>

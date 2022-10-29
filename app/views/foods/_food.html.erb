@@ -1,27 +1,16 @@
-<div id="<%= dom_id food %>">
-  <p>
-    <strong>Name:</strong>
-    <%= food.name %>
-  </p>
-
-  <p>
-    <strong>Comment:</strong>
-    <%= food.comment %>
-  </p>
-
-  <p>
-    <strong>Time:</strong>
-    <%= food.time %>
-  </p>
-
-  <p>
-    <strong>Date:</strong>
-    <%= food.date %>
-  </p>
-
-  <p>
-    <strong>Symptom:</strong>
-    <%= food.symptom_id %>
-  </p>
-
-</div>
+<section class="gradient-custom-5">
+  <div class="container">
+    <div class="main-timeline-5">
+      <div class="timeline-5 right-5">
+        <div class="">
+          <div class="card-body p-4">
+            <h5><%= food.name %></h5>
+            <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= food.date.strftime("%F") %>|<%= food.time.strftime("%H:%M") %></span>
+            <p class="mt-2 mb-0"><%= food.comment %></p>
+            <%= link_to "Show this food", food %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

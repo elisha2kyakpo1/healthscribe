@@ -11,6 +11,9 @@ class DrinksController < ApplicationController
 
   # GET /drinks/new
   def new
+    @user = current_user
+    @available_symptoms = @user.symptoms
+    @symptom = Symptom.find_by_id(params[:symptom_id])
     @drink = Drink.new
   end
 
@@ -19,11 +22,12 @@ class DrinksController < ApplicationController
 
   # POST /drinks or /drinks.json
   def create
+    @symptom = Symptom.find_by_id(params[:symptom_id])
     @drink = Drink.new(drink_params)
 
     respond_to do |format|
       if @drink.save
-        format.html { redirect_to drink_url(@drink), notice: 'Drink was successfully created.' }
+        redirect_to drink_url(@drink), notice: 'Drink was successfully created.'
         format.json { render :show, status: :created, location: @drink }
       else
         format.html { render :new, status: :unprocessable_entity }

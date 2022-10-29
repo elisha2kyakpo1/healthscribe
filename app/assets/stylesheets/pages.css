@@ -94,6 +94,7 @@ h6 {
   bottom: 0;
   right: 0;
   left: 0;
+  z-index: 500;
   background-color: #fff 
 }
 
@@ -132,17 +133,17 @@ a {
 }
 
 .second p {
-    line-height: 2em;
-  }
+  line-height: 2em;
+}
 
 .third  p {
-    line-height: 2.5em;
-    color: #32325d;
-  }
+  line-height: 2.5em;
+  color: #32325d;
+}
 
 .fourth p {
-    line-height: 2em;
-  }
+  line-height: 2em;
+}
 
 .medication {
   background-color: #008080;
