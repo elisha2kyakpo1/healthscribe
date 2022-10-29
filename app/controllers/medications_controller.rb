@@ -1,6 +1,5 @@
 class MedicationsController < ApplicationController
   before_action :set_medication, only: %i[ show edit update destroy ]
-  before_action :set_symptom, only: %i[ new create ]
 
   # GET /medications or /medications.json
   def index
@@ -9,10 +8,14 @@ class MedicationsController < ApplicationController
 
   # GET /medications/1 or /medications/1.json
   def show
+
   end
 
   # GET /medications/new
   def new
+    @user = current_user
+    @available_symptoms = @user.symptoms
+    @symptom = Symptom.find_by_id(params[:symptom_id])
     @medication = Medication.new
   end
 
@@ -22,16 +25,14 @@ class MedicationsController < ApplicationController
 
   # POST /medications or /medications.json
   def create
+    @symptom = Symptom.find_by_id(params[:symptom_id])
     @medication = Medication.new(medication_params)
 
-    respond_to do |format|
-      if @medication.save
-        format.html { redirect_to medication_url(@medication), notice: "Medication was successfully created." }
-        format.json { render :show, status: :created, location: @medication }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @medication.errors, status: :unprocessable_entity }
-      end
+    if @medication.save
+      redirect_to medications_path, notice: 'Symptom was successfully created.'
+    else
+      format.html { render :new, status: :unprocessable_entity }
+      format.json { render json: @medication.errors, status: :unprocessable_entity }
     end
   end
 

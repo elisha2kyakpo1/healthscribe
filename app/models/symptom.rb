@@ -6,4 +6,6 @@ class Symptom < ApplicationRecord
   has_many :drinks
   validates :name, presence: true
   enum :intensity, %i[stomach_ache diarrhea cosntipation headache nausea fever vomiting]
+
+  scope :symptom_medication, ->(name) { where('name ILIKE ?', "%#{name}%") }
 end

@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   get 'pages/index'
-  resources :symptoms do
+  resources :symptoms
     resources :medications
     resources :moods
     resources :foods
     resources :drinks
-  end
 
   devise_for :users
 

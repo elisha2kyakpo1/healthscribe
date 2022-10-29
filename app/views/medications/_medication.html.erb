@@ -1,27 +1,18 @@
-<div id="<%= dom_id medication %>">
-  <p>
-    <strong>Name:</strong>
-    <%= medication.name %>
-  </p>
-
-  <p>
-    <strong>Comment:</strong>
-    <%= medication.comment %>
-  </p>
-
-  <p>
-    <strong>Time:</strong>
-    <%= medication.time %>
-  </p>
-
-  <p>
-    <strong>Date:</strong>
-    <%= medication.date %>
-  </p>
-
-  <p>
-    <strong>Symptom:</strong>
-    <%= medication.symptom_id %>
-  </p>
+<section class="gradient-custom-5">
+  <div class="container">
+    <div class="main-timeline-5">
+      <div class="timeline-5 right-5">
+        <div class="">
+          <div class="card-body p-4">
+            <h5><%= medication.name %></h5>
+            <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= medication.date.strftime("%F") %>|<%= medication.time.strftime("%H:%M") %></span>
+            <p class="mt-2 mb-0"><%= medication.comment %></p>
+            <%= link_to "Show this medication", medication %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 </div>

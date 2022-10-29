@@ -1,4 +1,4 @@
-  #Hero {
+  .Hero {
     position: relative;
     background-color: #008080;
     /* background: linear-gradient(#47cc76,#6AD1BE,#40B4C7); */
@@ -89,53 +89,61 @@ h6 {
     font-weight: 800;
 }
 
-  .bottom {
-    background-color: #fff 
-  }
-  
-  .nav-link.active {
-    text-decoration: underline;
-  }
-  
-  .header {
-    background-color: #008080;
+.bottom {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #fff 
+}
+
+.nav-link.active {
+  text-decoration: underline;
+}
+
+.header {
+  background-color: #008080;
+}
+
+a:hover {
+  color: unset;
   }
 
-  a:hover {
-    color: unset;
-    }
-  
-  .para {
-    font-weight: 400;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    text-align: center;
+.para {
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.people {
+  position: absolute;
+  max-width: 100%;
+  bottom: 0;
+  right: -5%;
+}
+
+.people-img {
+  width: 100%;
+}
+
+.second p {
+    line-height: 2em;
   }
 
-  a {
-    text-decoration: none;
+.third  p {
+    line-height: 2.5em;
+    color: #32325d;
   }
 
-  .people {
-    position: absolute;
-    max-width: 100%;
-    bottom: 0;
-    right: -5%;
+.fourth p {
+    line-height: 2em;
   }
 
-  .people-img {
-    width: 100%;
-  }
-
-  #second p {
-      line-height: 2em;
-    }
-
-  #third  p {
-      line-height: 2.5em;
-      color: #32325d;
-    }
-  
-  #fourth p {
-      line-height: 2em;
-    }
+.medication {
+  background-color: #008080;
+}
