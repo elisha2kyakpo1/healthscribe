@@ -25,5 +25,12 @@
   <% end %>
   <%= link_to (svg_tag "save_plus"), new_symptom_path %>
 </div>
+
+
+<div class="add-item">
+  <div class="add">
+    <%= link_to '<i class="fa-sharp fa-solid fa-plus"></i>'.html_safe, entries_index_path %>
+  </div>
+</div>
 <%#= line_chart({"2021-01-01" => 2, "2021-01-02" => 3}) %>
 
