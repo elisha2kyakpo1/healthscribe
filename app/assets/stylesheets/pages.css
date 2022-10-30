@@ -11,7 +11,8 @@
     position: relative;
   }
 
-  .cancel {
+  .cancel,
+  .add {
     position: absolute;
     bottom: 30px;
     right: 30px;
@@ -124,8 +125,16 @@ h6 {
   border-bottom: 1px solid rgb(217, 217, 217);
 }
 
+.time-insight {
+  color: #32325d;
+}
+
 .items:nth-child(5) {
   border: none;
+}
+
+.bars {
+  font-size: 2.5rem;
 }
 
 .nav-link.active {

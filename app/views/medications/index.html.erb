@@ -1,5 +1,11 @@
 <div class="down-margin">
-  <p style="color: green"><%= notice %></p>
+    <header class="text-center py-3 w-100 medication rounded px-4 text-light d-flex justify-content-between">
+    <p class="mb-0"> <%= link_to '<i class="text-white fa-solid fa-arrow-left"></i>'.html_safe, entries_index_path %></p>
+    <p class="mb-0 mx-auto d-flex text-white">
+        <%= svg_tag "Medication"%>
+        Medication
+    </p>
+  </header>
 
   <ul class="navbar-nav">
     <% if user_signed_in? %>

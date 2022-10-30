@@ -1,7 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Foods</h1>
-
+  <header class="text-center py-3 w-100 medication rounded px-4 text-light d-flex justify-content-between">
+    <p class="mb-0"> <%= link_to '<i class="text-white fa-solid fa-arrow-left"></i>'.html_safe, medications_path %></p>
+    <p class="mb-0 mx-auto d-flex text-white">
+        <%= svg_tag "Food"%>
+        Food
+    </p>
+  </header>
 <div id="foods">
   <% @foods.each do |food| %>
     <%= render food %>

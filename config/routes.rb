@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'entries/index'
   get 'pages/index'
+  get 'entries/insight'
   resources :symptoms
     resources :medications
     resources :moods

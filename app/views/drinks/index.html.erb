@@ -1,6 +1,11 @@
 <p style="color: green"><%= notice %></p>
-
-<h1>Drinks</h1>
+  <header class="text-center py-3 w-100 medication rounded px-4 text-light d-flex justify-content-between">
+    <p class="mb-0"> <%= link_to '<i class="text-white fa-solid fa-arrow-left"></i>'.html_safe, entries_index_path %></p>
+    <p class="mb-0 mx-auto d-flex text-white">
+        <%= svg_tag "Drink"%>
+        Drink
+    </p>
+  </header>
 
 <div id="drinks">
   <% @drinks.each do |drink| %>
