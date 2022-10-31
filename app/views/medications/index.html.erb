@@ -7,22 +7,6 @@
     </p>
   </header>
 
-  <ul class="navbar-nav">
-    <% if user_signed_in? %>
-      <li class="nav-item <%= active_class(edit_user_registration_path) %>">
-        <%= link_to "Hi, #{current_user.full_name}", edit_user_registration_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item <%= active_class(destroy_user_session_path) %>">
-        <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete }, class: "login text-dark" %>
-      </li>
-    <% else %>
-      <li class="nav-item">
-        <%= link_to 'Sign In', user_session_path, class: 'nav-link login' %>
-      </li>
-    <% end %>
-  </ul>
-  <h1>Medications</h1>
-
   <div id="medications">
   <%= link_to "New medication", new_medication_path %>
     <% @medications.each do |medication| %>

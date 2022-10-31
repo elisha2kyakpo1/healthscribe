@@ -134,7 +134,17 @@ h6 {
 }
 
 .bars {
-  font-size: 2.5rem;
+  position: relative;
+}
+
+.bar {
+  font-size: 2rem;
+}
+
+.bars button {
+  background: transparent;
+  margin-left: auto;
+  margin-right: 30px;
 }
 
 .nav-link.active {

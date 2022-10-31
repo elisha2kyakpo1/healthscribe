@@ -1,0 +1,17 @@
+.navlist {
+  display: none;
+  margin: 0;
+  background-color: turquoise;
+}
+.expanded .navlist {
+  display: block;
+}
+
+.expanded .overlay {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
