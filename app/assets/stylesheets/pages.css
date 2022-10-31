@@ -121,8 +121,13 @@ h6 {
   background-color: #fff 
 }
 
-.items {
+.items,
+.name {
   border-bottom: 1px solid rgb(217, 217, 217);
+}
+
+.account {
+  border-top: 1px solid rgb(217, 217, 217);
 }
 
 .time-insight {

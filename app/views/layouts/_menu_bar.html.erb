@@ -4,13 +4,26 @@
       <i class="py-3 bar text-white ml-auto fa-solid fa-bars"></i>
     </button>
   </div>
-    <ul class="navlist" aria-expanded="false" data-toggle-target="ariaExpander">
+    <ul class="navlist pl-0 popup" aria-expanded="false" data-toggle-target="ariaExpander">
       <% if current_user %>
-        <li><%= link_to "Hi, #{current_user.full_name}", class: "get-start" %></li>
-        <li><%= link_to "Edit profile", edit_user_registration_path, class: 'nav-link' %></li>
-        <li><%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete }, class: "login text-dark" %></li>
+        <div class="name mt-0">
+          <div class="more-data">
+            <div class="mb-2 d-flex align-items-center">
+              <%= svg_tag "Profile", class: "img" %> <p><%= link_to "#{current_user.full_name}", class: "name" %></p>
+            </div>
+          </div>
+        </div>
+        <div class="more-data d-flex align-items-center">
+          <div>
+            <p><%= link_to "My profile ", edit_user_registration_path, class: 'profile' %></p>
+            <p><%= link_to "App Details" %></p>
+            <p><%= link_to "Export data(Coming soon)" %></p>
+            <p><%= link_to "Privacy & Terms" %></p>
+          </div>
+        </div>
+        <li class="account text-center pt-2"><%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete }, class: "text-dark" %></li>
         <% else %>
-        <li> <%= link_to 'Sign in', user_session_path, class: "login" %></li>
+        <li class="account text-center pt-2"> <%= link_to 'Sign in', user_session_path, class: "" %></li>
       <% end %>
     <ul>
 </div>
