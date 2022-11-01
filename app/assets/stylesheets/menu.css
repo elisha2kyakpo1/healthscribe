@@ -26,6 +26,7 @@
   transition: all 5s ease-in-out;
   right: 0;
   top: 40px;
+  z-index: 5;
 }
 
 .popup li {

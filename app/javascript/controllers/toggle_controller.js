@@ -28,18 +28,4 @@ export default class extends Controller {
       }
     }
   }
-
-  // menu() {
-  //   // console.log(this.hideTarget)
-  //   this.isOpenValue ? this.hidden() : this.open;
-  //   this.isOpenValue = !this.isOpenValue;
-  // };
-
-  // open() {
-  //   this.menuTarget.style.display = "block";
-  // };
-
-  // hidden() {
-  //   this.menuTarget.style.display = "none";
-  // };
 };
