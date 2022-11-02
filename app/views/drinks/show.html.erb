@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<div class="position-relative">
+  <p style="color: green"><%= notice %></p>
 
-<%= render @drink %>
+  <%= render @drink %>
 
-<div>
-  <%= link_to "Edit this drink", edit_drink_path(@drink) %> |
-  <%= link_to "Back to drinks", drinks_path %>
+  <div class="position-absolute action-btn">
+    <%= link_to "Edit this drink", edit_drink_path(@drink) %> |
+    <%= link_to "Back to drinks", drinks_path %>
 
-  <%= button_to "Destroy this drink", @drink, method: :delete %>
+    <%= button_to "Delete this drink", @drink, method: :delete, class:"btn btn-primary" %>
+  </div>
 </div>

@@ -3,7 +3,7 @@ class DrinksController < ApplicationController
 
   # GET /drinks or /drinks.json
   def index
-    @drinks = Drink.all
+    @drinks = Drink.all.order('created_at DESC').where(user: current_user)
   end
 
   # GET /drinks/1 or /drinks/1.json
@@ -12,8 +12,6 @@ class DrinksController < ApplicationController
   # GET /drinks/new
   def new
     @user = current_user
-    @available_symptoms = @user.symptoms
-    @symptom = Symptom.find_by_id(params[:symptom_id])
     @drink = Drink.new
   end
 
@@ -22,8 +20,7 @@ class DrinksController < ApplicationController
 
   # POST /drinks or /drinks.json
   def create
-    @symptom = Symptom.find_by_id(params[:symptom_id])
-    @drink = Drink.new(drink_params)
+    @drink = current_user.drinks.build(drink_params)
 
     respond_to do |format|
       if @drink.save
@@ -66,8 +63,10 @@ class DrinksController < ApplicationController
     @drink = Drink.find(params[:id])
   end
 
+
+
   # Only allow a list of trusted parameters through.
   def drink_params
-    params.require(:drink).permit(:name, :comment, :time, :date, :symptom_id)
+    params.require(:drink).permit(:name, :comment, :time, :date, :user_id)
   end
 end

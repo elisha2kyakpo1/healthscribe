@@ -5,8 +5,7 @@ class SymptomsController < ApplicationController
   # GET /symptoms or /symptoms.json
   def index
     @user = current_user
-    @symptoms = Symptom.all.order('created_at DESC').where(user: current_user).includes(:user, :medications, :moods,
-                                                                                        :foods, :drinks)
+    @symptoms = Symptom.all.order('created_at DESC').where(user: current_user)
   end
 
   # GET /symptoms/1 or /symptoms/1.json
@@ -67,6 +66,6 @@ class SymptomsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def symptom_params
-    params.require(:symptom).permit(:name, :intensity, :time, :date, :comment, :user_id)
+    params.require(:symptom).permit(:time, :date, :comment, :user_id, intensity: [])
   end
 end

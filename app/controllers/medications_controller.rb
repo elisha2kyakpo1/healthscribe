@@ -3,7 +3,7 @@ class MedicationsController < ApplicationController
 
   # GET /medications or /medications.json
   def index
-    @medications = Medication.all
+    @medications = Medication.all.order('created_at DESC').where(user: current_user)
   end
 
   # GET /medications/1 or /medications/1.json
@@ -14,8 +14,6 @@ class MedicationsController < ApplicationController
   # GET /medications/new
   def new
     @user = current_user
-    @available_symptoms = @user.symptoms
-    @symptom = Symptom.find_by_id(params[:symptom_id])
     @medication = Medication.new
   end
 
@@ -25,8 +23,7 @@ class MedicationsController < ApplicationController
 
   # POST /medications or /medications.json
   def create
-    @symptom = Symptom.find_by_id(params[:symptom_id])
-    @medication = Medication.new(medication_params)
+    @medication = current_user.medications.build(medication_params)
 
     if @medication.save
       redirect_to medications_path, notice: 'Symptom was successfully created.'
@@ -64,13 +61,9 @@ class MedicationsController < ApplicationController
     def set_medication
       @medication = Medication.find(params[:id])
     end
-  
-    def set_symptom
-      @symptom = Symptom.find(params[:symptom_id])
-    end
 
     # Only allow a list of trusted parameters through.
     def medication_params
-      params.require(:medication).permit(:name, :comment, :time, :date, :symptom_id)
+      params.require(:medication).permit(:name, :comment, :time, :date, :user_id)
     end
 end

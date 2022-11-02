@@ -32,10 +32,7 @@
                     <%= form.label :time, style: "display: block", class: "mb-2" %>
                     <%= form.time_field :time, class: "rounded py-2 py-md-3 border px-2" %>
                   </div>
-                  <div class="d-block">
-                    <%= form.label :symptom_id, class: 'mb-2' %>
-                    <%= form.select :symptom_id, options_from_collection_for_select(@available_symptoms, "id", "name"), {}, { class: "border rounded py-2 py-md-3 border px-2" } %>
-                  </div>
+          
                 </div>
 
                 <h5 class="mt-5">Add Drink</h5>

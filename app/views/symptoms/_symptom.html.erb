@@ -4,10 +4,12 @@
       <div class="timeline-5 right-5">
         <div class="">
           <div class="card-body p-4">
-            <h5><%= symptom.name %></h5>
+            <%# symptom.intensity.each do |intense| %>
+              <h5><%#= intense %></h5>
+              <%#end%>
             <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= symptom.date.strftime("%F") %>|<%= symptom.time.strftime("%H:%M") %></span>
             <p class="mt-2 mb-0"><%= symptom.comment %></p>
-            <p class="mt-2 mb-0"><%= symptom.intensity %></p>
+            <p class="mt-2 mb-0"><%#= symptom.intensity %></p>
              <p class="mt-2 mb-0"><%#= symptom.medications %></p>
             <%= link_to "Show this symptom", symptom %>
           </div>

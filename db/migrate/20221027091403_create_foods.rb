@@ -5,7 +5,7 @@ class CreateFoods < ActiveRecord::Migration[7.0]
       t.text :comment
       t.time :time
       t.datetime :date
-      t.references :symptom, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

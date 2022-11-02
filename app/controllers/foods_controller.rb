@@ -3,7 +3,7 @@ class FoodsController < ApplicationController
 
   # GET /foods or /foods.json
   def index
-    @foods = Food.all
+    @foods = Food.all.order('created_at DESC').where(user: current_user)
   end
 
   # GET /foods/1 or /foods/1.json
@@ -12,8 +12,6 @@ class FoodsController < ApplicationController
   # GET /foods/new
   def new
     @user = current_user
-    @available_symptoms = @user.symptoms
-    @symptom = Symptom.find_by_id(params[:symptom_id])
     @food = Food.new
   end
 
@@ -22,8 +20,8 @@ class FoodsController < ApplicationController
 
   # POST /foods or /foods.json
   def create
-    @symptom = Symptom.find_by_id(params[:symptom_id])
-    @food = Food.new(food_params)
+
+    @food = current_user.foods.build(food_params)
 
     respond_to do |format|
       if @food.save
@@ -68,6 +66,6 @@ class FoodsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def food_params
-    params.require(:food).permit(:name, :comment, :time, :date, :symptom_id)
+    params.require(:food).permit(:name, :comment, :time, :date, :user_id)
   end
 end

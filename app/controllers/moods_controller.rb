@@ -3,7 +3,7 @@ class MoodsController < ApplicationController
 
   # GET /moods or /moods.json
   def index
-    @moods = Mood.all
+    @moods = Mood.all.order('created_at DESC').where(user: current_user)
   end
 
   # GET /moods/1 or /moods/1.json
@@ -12,8 +12,6 @@ class MoodsController < ApplicationController
   # GET /moods/new
   def new
     @user = current_user
-    @available_symptoms = @user.symptoms
-    @symptom = Symptom.find_by_id(params[:symptom_id])
     @mood = Mood.new
   end
 
@@ -22,8 +20,7 @@ class MoodsController < ApplicationController
 
   # POST /moods or /moods.json
   def create
-    @symptom = Symptom.find_by_id(params[:symptom_id])
-    @mood = Mood.new(mood_params)
+    @mood = current_user.moods.create(mood_params)
 
     respond_to do |format|
       if @mood.save
@@ -62,12 +59,12 @@ class MoodsController < ApplicationController
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_mood
-    @mood = Mood.find(params[:id])
-  end
+  # def set_mood
+  #   @mood = Mood.find(params[:id])
+  # end
 
   # Only allow a list of trusted parameters through.
   def mood_params
-    params.require(:mood).permit(:name, :comment, :time, :date, :symptom_id)
+    params.require(:mood).permit(:mood, :comment, :time, :date, :user_id)
   end
 end

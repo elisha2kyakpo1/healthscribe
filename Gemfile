@@ -8,6 +8,7 @@ gem 'devise'
 gem 'rails', '~> 7.0.4'
 gem "chartkick"
 gem "groupdate"
+gem 'cancancan'
 gem 'active_link_to'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'

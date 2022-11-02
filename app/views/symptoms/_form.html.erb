@@ -35,35 +35,13 @@
 
           <h5 class="mt-5">Drag the sliders to indicate the intensity</h5>
             <div class="">
-              <div class="d-flex justify-content-center justify-content-md-end gap-4 mt-4 me-4">
-                <%= form.label :headache, class: "form-label"%>
-                <%= form.range_field :headache, min:0, max:5, class:"form-range", id:"slider1" %>
-              </div>
-              <div class="d-flex justify-content-center justify-content-md-end gap-4 mt-4 me-4">
-                <%= form.label :diarrhea, class: "form-label"%>
-                <%= form.range_field :diarrhea, min:0, max:5, class:"form-range", id:"slider2" %>
-              </div>
-              <div class="d-flex justify-content-center justify-content-md-end gap-4 mt-4 me-4">
-                <%= form.label :cosntipation, class: "form-label"%>
-                <%= form.range_field :cosntipation, min:0, max:5, class:"form-range", id:"slider3" %>
-              </div>
-              <div class="d-flex justify-content-center justify-content-md-end gap-4 mt-4 me-4">
-                <%= form.label :nausea, class: "form-label"%>
-                <%= form.range_field :nausea, min:0, max:5, class:"form-range", id:"slider4" %>
-              </div>
-              <div class="d-flex justify-content-center justify-content-md-end gap-4 mt-4 me-4">
-                <%= form.label :fever, class: "form-label"%>
-                <%= form.range_field :fever, min:0, max:5, class:"form-range", id:"slider5" %>
-              </div>
-              <div class="d-flex justify-content-center justify-content-md-end gap-4 mt-4 me-4">
-                <%= form.label :vomiting, class: "form-label"%>
-                <%= form.range_field :vomiting, min:0, max:5, class:"form-range", id:"slider6" %>
-              </div>
-              <div class="d-flex justify-content-center justify-content-md-end gap-4 mt-4 me-4">
-                <%= form.label :stomach_ache, class: "form-label"%>
-                <%= form.range_field :stomach_ache, min:0, max:5, class:"form-range", id:"slider7" %>
-              </div>
-
+              <% Symptom::INTENSITY.each do |key| %>
+                <div class="d-flex justify-content-center justify-content-md-end gap-4 mt-4 me-4">
+                  <%= form.label key, class: "form-label"%>
+                  <%#= form.check_box :intensity, { multiple: true, checked: form.object.intensity&.include?(key.to_s) }, key, nil %>
+                  <%= range_field(:intensity, key, {multiple: true, class: "form-range", min:0, max:5, step:1, value:0}) %>
+                </div>
+              <% end %>
               <div class="col-12 col-md-5">
                 <%= form.label :comment, class: "mb-2 rounded" %>
                 <%= form.text_area :comment, cols:50, rows:5, class: "rounded" %>
@@ -74,7 +52,7 @@
       </div>  
     </div>
     <div>
-      <%= form.submit %>
+      <%= form.submit "Save", class:"btn btn-primary" %>
     </div>
   </div>
 <% end %>

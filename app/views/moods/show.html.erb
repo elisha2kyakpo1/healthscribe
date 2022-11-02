@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<div class="position-relative">
+ <p style="color: green"><%= notice %></p>
 
-<%= render @mood %>
+  <%= render @mood %>
 
-<div>
-  <%= link_to "Edit this mood", edit_mood_path(@mood) %> |
-  <%= link_to "Back to moods", moods_path %>
+  <div class="position-absolute action-btn">
+    <%= link_to "Edit this mood", edit_mood_path(@mood) %> |
+    <%= link_to "Back to moods", moods_path %>
 
-  <%= button_to "Destroy this mood", @mood, method: :delete %>
+    <%= button_to "Delete this mood", @mood, method: :delete, class:"btn btn-primary" %>
+  </div>
 </div>
