@@ -1,5 +1,6 @@
 class DrinksController < ApplicationController
   before_action :set_drink, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /drinks or /drinks.json
   def index
@@ -62,8 +63,6 @@ class DrinksController < ApplicationController
   def set_drink
     @drink = Drink.find(params[:id])
   end
-
-
 
   # Only allow a list of trusted parameters through.
   def drink_params

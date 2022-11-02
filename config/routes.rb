@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'entries/insight'
 
-
   devise_for :users
 
   resources :user

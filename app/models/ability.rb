@@ -7,7 +7,7 @@ class Ability
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?
-      # can :read, :all
+    # can :read, :all
     return unless user.current_user?
 
     can :manage, :all

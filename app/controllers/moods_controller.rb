@@ -1,6 +1,6 @@
 class MoodsController < ApplicationController
   before_action :set_mood, only: %i[show edit update destroy]
-
+  before_action :authenticate_user!
   # GET /moods or /moods.json
   def index
     @moods = Mood.all.order('created_at DESC').where(user: current_user)
@@ -69,6 +69,6 @@ class MoodsController < ApplicationController
   def mood_params
     para = params.require(:mood).permit(:comment, :time, :date, :user_id)
     para[:mood] = params[:mood][:mood].to_i
-    return para
+    para
   end
 end

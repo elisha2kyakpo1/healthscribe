@@ -1,6 +1,6 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: %i[show edit update destroy]
-
+  before_action :authenticate_user!
   # GET /foods or /foods.json
   def index
     @foods = Food.all.order('created_at DESC').where(user: current_user)
@@ -20,7 +20,6 @@ class FoodsController < ApplicationController
 
   # POST /foods or /foods.json
   def create
-
     @food = current_user.foods.build(food_params)
 
     respond_to do |format|

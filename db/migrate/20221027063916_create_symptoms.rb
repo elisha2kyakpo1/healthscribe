@@ -3,7 +3,7 @@ class CreateSymptoms < ActiveRecord::Migration[7.0]
     create_table :symptoms do |t|
       t.string :intensity, array: true, default: []
       t.time :time
-      t.datetime :date
+      t.date :date
       t.text :comment
       t.references :user, null: false, foreign_key: true
 
