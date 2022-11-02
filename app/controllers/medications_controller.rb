@@ -23,7 +23,7 @@ class MedicationsController < ApplicationController
     @medication = current_user.medications.build(medication_params)
 
     if @medication.save
-      redirect_to medications_path, notice: 'Symptom was successfully created.'
+      format.html { redirect_to medications_path, notice: 'Symptom was successfully created.' }
     else
       format.html { render :new, status: :unprocessable_entity }
       format.json { render json: @medication.errors, status: :unprocessable_entity }
