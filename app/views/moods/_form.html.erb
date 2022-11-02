@@ -33,17 +33,18 @@
                 </div>
               </div>
 
-              <h5 class="mt-5">Add Mood</h5>
-              <div class="mt-3 d-flex justify-content-around">
-                <div class="d-flex justify-content-center gap-4 mt-4 me-4">
+              <h5 class="mt-5">Mood</h5>
+              <div class="">
+                <div class="d-flex justify-content-around gap-4">
                   <%= form.collection_radio_buttons :mood, Mood.moods, :last, :last do |rb| %>
-                    <%= form.label :mood %>
-                    <%= rb.radio_button %>
-                  <% end %>
+                  <div class="d-flex flex-column justify-content-around">
+                    <%= rb.object[0] %><%= rb.radio_button %>
+                  </div>
+                  <%  end %>
                 </div>
               </div>
 
-              <div class="">
+              <div class="mt-5">
                 <%= form.label :comment, class: "mb-2 rounded" %>
                 <%= form.text_area :comment, rows:5, class: "form-control rounded w-100" %>
               </div>
@@ -51,7 +52,7 @@
           </div>
     </div>
     <div>
-      <%= form.submit "save_btn" %>
+      <%= form.submit class:"btn btn-primary" %>
     </div>
   </div>
 <% end %>

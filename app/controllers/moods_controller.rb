@@ -20,7 +20,7 @@ class MoodsController < ApplicationController
 
   # POST /moods or /moods.json
   def create
-    @mood = current_user.moods.create(mood_params)
+    @mood = current_user.moods.build(mood_params)
 
     respond_to do |format|
       if @mood.save
