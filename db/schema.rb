@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_27_091422) do
   end
 
   create_table "moods", force: :cascade do |t|
-    t.integer "mood"
+    t.integer "mood", default: 0
     t.text "comment"
     t.time "time"
     t.datetime "date"
