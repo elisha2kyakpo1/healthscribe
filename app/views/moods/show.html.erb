@@ -3,10 +3,13 @@
 
   <%= render @mood %>
 
-  <div class="position-absolute action-btn">
-    <%= link_to "Edit this mood", edit_mood_path(@mood) %> |
-    <%= link_to "Back to moods", moods_path %>
+  <div class="position-absolute action-btn d-flex justify-content-between">
+    <%= link_to '<i class="fa-solid fa-pencil mr-2"></i>'.html_safe, edit_mood_path(@mood) %>
+    <%= button_to @mood, method: :delete, class:"" do %>
+      <i class="fa-regular fa-trash-can mr-2"></i>
+    <% end %><%= link_to '<i class="fa-solid fa-arrow-rotate-left"></i>'.html_safe, moods_path(@mood) %>
 
-    <%= button_to "Delete this mood", @mood, method: :delete, class:"btn btn-primary" %>
+    <%#= link_to '<i class="fa-solid fa-trash-can"></i>'.html_safe, edit_mood_path(@mood) %>
+    
   </div>
 </div>

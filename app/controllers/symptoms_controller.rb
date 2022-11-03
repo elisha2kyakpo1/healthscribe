@@ -21,6 +21,7 @@ class SymptomsController < ApplicationController
 
   # POST /symptoms or /symptoms.json
   def create
+    @user = current_user
     @symptom = current_user.symptoms.build(symptom_params)
 
     respond_to do |format|
@@ -66,6 +67,10 @@ class SymptomsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def symptom_params
-    params.require(:symptom).permit(:time, :date, :comment, :user_id, :intensity)
+    # params.require(:symptom).permit(:time, :date, :comment, :user_id, intensity: [])
+
+    para = params.require(:symptom).permit(:comment, :time, :date, :user_id)
+    para[:intensity] = params[:symptom][intensity: []].to_a
+    para
   end
 end

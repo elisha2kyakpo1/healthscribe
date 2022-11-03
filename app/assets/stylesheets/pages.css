@@ -7,8 +7,10 @@
   }
 
   .action-btn {
-    right: 20px;
+    left: 19%;
     bottom: 0;
+    width: 10%;
+    color: #32325d;
   }
 
   .item-cont,

@@ -3,10 +3,10 @@
 
   <%= render @food %>
 
-  <div class="position-absolute action-btn">
-    <%= link_to "Edit this food", edit_food_path(@food) %> |
-    <%= link_to "Back to foods", foods_path %>
-
-    <%= button_to "Delete this food", @food, method: :delete, class:"btn btn-primary" %>
+  <div class="position-absolute action-btn d-flex justify-content-between">
+<%= link_to '<i class="fa-solid fa-pencil mr-2"></i>'.html_safe, edit_food_path(@food) %>
+    <%= button_to @food, method: :delete, class:"" do %>
+      <i class="fa-regular fa-trash-can mr-2"></i>
+    <% end %><%= link_to '<i class="fa-solid fa-arrow-rotate-left"></i>'.html_safe, foods_path(@food) %>
   </div>
 <div>

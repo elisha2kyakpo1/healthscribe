@@ -42,9 +42,9 @@
                   <%= range_field(:intensity, key, {multiple: true, class: "form-range", min:0, max:5, step:1, value:0}) %>
                 </div>
               <% end %>
-              <div class="col-12 col-md-5">
+              <div class="mt-5">
                 <%= form.label :comment, class: "mb-2 rounded" %>
-                <%= form.text_area :comment, cols:50, rows:5, class: "rounded" %>
+                <%= form.text_area :comment, rows:5, class: "form-control rounded w-100" %>
               </div>
             </div>
           </div>
