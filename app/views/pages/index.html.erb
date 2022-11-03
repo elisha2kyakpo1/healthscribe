@@ -39,6 +39,7 @@
           </div>
           <div class="col-9 mb-4 mb-md-0 mx-auto col-md-3">
             <img class="img-fluclass" src={Logo} alt="blank.svg" />
+            <%#= image_tag(message.user.pic) if message.user.pic.attached? %>
           </div>
         </div>
       </div>
@@ -63,7 +64,7 @@
         <div class="mt-5 d-flex flex-column-reverse flex-md-row flex-md-wrap justify-content-between align-items-center">
           <div class="col-12 col-md-6 mb-2 mb-md-5 ">
             <div class="col-10 mx-auto">
-              <%=svg_tag "create-profile"%>
+              <%=svg_tag "Insights"%>
             </div>
           </div>
           <div class="col-12 col-md-6 mb-0 mb-md-5">
@@ -91,7 +92,8 @@
           </div>
           <div class="col-12 col-md-6 mt-1 my-md-5">
             <div class="col-10 mx-auto">
-              <%=svg_tag "Log-event"%>
+              <%#=svg_tag "Log-event"%>
+              <%=svg_tag "Insights"%>
             </div>
           </div>
         </div>
