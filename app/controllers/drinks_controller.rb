@@ -4,6 +4,7 @@ class DrinksController < ApplicationController
 
   # GET /drinks or /drinks.json
   def index
+    @user = current_user
     @drinks = Drink.all.order('created_at DESC').where(user: current_user)
   end
 
@@ -21,7 +22,8 @@ class DrinksController < ApplicationController
 
   # POST /drinks or /drinks.json
   def create
-    @drink = current_user.drinks.build(drink_params)
+    @user = current_user
+    @drink = @user.drinks.build(drink_params)
 
     respond_to do |format|
       if @drink.save

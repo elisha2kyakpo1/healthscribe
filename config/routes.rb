@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'entries/index'
+  get 'timelines/index'
   get 'pages/index'
   get 'entries/insight'
 

@@ -3,6 +3,7 @@ class MedicationsController < ApplicationController
   before_action :authenticate_user!
   # GET /medications or /medications.json
   def index
+    @user = current_user
     @medications = Medication.all.order('created_at DESC').where(user: current_user)
   end
 
@@ -20,7 +21,8 @@ class MedicationsController < ApplicationController
 
   # POST /medications or /medications.json
   def create
-    @medication = current_user.medications.build(medication_params)
+    @user = current_user
+    @medication = @user.medications.build(medication_params)
 
     if @medication.save
       format.html { redirect_to medications_path, notice: 'Symptom was successfully created.' }

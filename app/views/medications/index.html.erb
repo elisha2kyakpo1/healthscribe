@@ -7,15 +7,17 @@
     </p>
   </header>
 
-  <div id="medications">
-  <%= link_to "New medication", new_medication_path %>
-    <% @medications.each do |medication| %>
-      <%= render medication %>
-      <p>
-        <%= link_to "Show this medication", medication %>
-      </p>
-    <% end %>
-    <%= link_to (svg_tag "save_plus"), new_medication_path %>
+  <div class="position-relative">
+    <div id="medications">
+      <%= link_to "New medication", new_medication_path %>
+      <% @medications.each do |medication| %>
+        <%= render medication %>
+        <p class="position-absolute">
+          <%= link_to "View Details", medication %>
+        </p>
+      <% end %>
+      <%= link_to (svg_tag "save_plus"), new_medication_path %>
+    </div>
   </div>
 </div>
 
