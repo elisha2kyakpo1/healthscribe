@@ -1,7 +1,7 @@
 .main-timeline-5 {
   position: relative;
-  max-width: 50%;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: 5%;
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -59,6 +59,19 @@ p {
   left: -10px;
 }
 
+.time-line {
+  margin-left: 30px
+}
+
+.containers {
+  width: 80%;
+  margin-left: 30px;
+}
+
+.insight {
+  margin-right: 30px
+}
+
 @media (max-width: 991px) {
   .main-timeline-5 {
     max-width: 100%;
@@ -66,5 +79,5 @@ p {
 }
 .gradient-custom-5 {
   /* fallback for old browsers */
-  background-color: rgb(245, 245, 245);;
+  background-color: #fff;
 }

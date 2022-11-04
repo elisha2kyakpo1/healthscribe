@@ -6,6 +6,11 @@
     color: #32325d;
   }
 
+  .view {
+    left: 10.5%;
+    top: 38%;
+  }
+
   .action-btn {
     left: 19%;
     bottom: 0;

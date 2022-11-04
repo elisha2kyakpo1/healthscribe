@@ -1,29 +1,29 @@
-  <div class="sign-head">
+<div class="">
+  <div class="sign-head mb-2">
     <%= render "layouts/menu_bar" %>
-    <div class='d-flex gap-2 mx-5 gap-md-4 justify-content-between'>
-      <div class="d-flex align-items-center">
+    <div class='bg-white d-flex gap-2 gap-md-4 justify-content-between'>
+      <div class="d-flex time-line align-items-center">
         <%= svg_tag 'Timeline_Selected', class: "timeline" %>
         <%= link_to 'Timeline', symptoms_path, class: "time-insight py-3" %>
       </div>
-      <div class="d-flex align-items-center">
+      <div class="d-flex insight align-items-center">
         <%= svg_tag 'Insights_Selected', class: "timeline" %>
         <%= link_to 'Insight', entries_insight_path, class: "time-insight py-3" %>
       </div>
     </div>
   </div>
 
-  <div class="position-relative">
+  <div class="containers">
     <div id="symptoms">
       <% @symptoms.each do |symptom| %>
         <%= render symptom %>
-      <p class="position-absolute">
-        <%= link_to "View Details", symptom %>
-      </p>
+        
       <% end %>
       <%= link_to 'Add Symptom', new_symptom_path %>
       <%= link_to (svg_tag "save_plus"), entries_index_path, class: "add" %>
     </div>
   </div>
 
-<%#= line_chart({"2021-01-01" => 2, "2021-01-02" => 3}) %>
+  <div class="bg-white"><%#= pie_chart Symptom.group_by_day(:created_at).count %></div>
+</div>
 
