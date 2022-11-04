@@ -24,11 +24,11 @@
           <div class="d-flex justify-content-between">
             <div class="d-block">
               <%= form.label :date, style: "display: block", class: "mb-2" %>
-              <%= form.date_field :date, class: "w-100 rounded py-2 py-md-3 border px-2" %>
+              <%= form.date_field :date, class: "w-100 rounded py-2 py-md-3 border px-2", value: Time.now.strftime('%Y-%m-%d') %>
             </div>
             <div class="d-block">
               <%= form.label :time, style: "display: block", class: "mb-2" %>
-              <%= form.time_field :time, class: "rounded py-2 py-md-3 border px-2" %>
+              <%= form.time_field :time, class: "rounded py-2 py-md-3 border px-2", value: Time.now.strftime("%H:%M") %>
             </div>
           </div>
 
