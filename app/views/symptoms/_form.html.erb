@@ -14,7 +14,6 @@
   <div>
     <div class="col-md-8 mx-auto pb-5 bg-light">
       <header class="text-center py-3 w-100 medication px-4 text-light d-flex justify-content-between">
-      <p class="mb-0"> <%= link_to '<i class="text-white fa-solid fa-arrow-left"></i>'.html_safe, entries_index_path %></p>
       <div class="mb-0 mx-auto d-flex align-items-center text-white">
         <%= svg_tag "Symptom"%>
          <h4> Symptom</h4>
@@ -52,7 +51,8 @@
       </div>  
     </div>
     <div>
-      <%= form.submit "Save", class:"btn btn-primary" %>
+      <%= link_to "Cancel", entries_index_path, class:"btn btn-primary" %>
+      <%= form.submit class:"btn btn-primary" %>
     </div>
   </div>
 <% end %>

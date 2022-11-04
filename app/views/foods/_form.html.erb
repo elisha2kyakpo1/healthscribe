@@ -15,7 +15,6 @@
     <div>
         <div class="col-md-8 mx-auto mt-5 pb-5 bg-light">
             <header class="text-center py-3 w-100 medication px-4 text-light d-flex justify-content-between">
-            <p class="mb-0"> <%= link_to '<i class="text-white fa-solid fa-arrow-left"></i>'.html_safe, foods_path %></p>
             <p class="mb-0 mx-auto d-flex text-white">
                 <%= svg_tag "Food"%>
                 Meal/Food
@@ -54,7 +53,8 @@
           </div>
       </div>
       <div>
-       <%= form.submit "save_btn" %>
+        <%= link_to "Cancel", entries_index_path, class:"btn btn-primary" %>
+        <%= form.submit class:"btn btn-primary" %>
       </div>
     </div>
   <% end %>

@@ -12,11 +12,15 @@
   }
 
   .action-btn {
-    left: 19%;
-    bottom: 0;
+    left: 13%;
+    bottom: -2px;
     width: 10%;
     color: #32325d;
   }
+
+.action-btn a {
+  color: #32325d;
+}
 
   .item-cont,
   .Hero {
