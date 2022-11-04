@@ -84,6 +84,20 @@
     font-weight: 700;
   }
 
+  .submit {
+    color: white;
+    border: 1px solid white;
+    background-color: #40b4c7;
+    border-radius: 30px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 700;
+  }
+
+  .cancel-button {
+    color: #40b4c7;
+    font-weight: 700;
+  }
+
   .navbar {
     position: fixed;
     top: 0;
@@ -140,6 +154,10 @@ h6 {
 .items,
 .name {
   border-bottom: 1px solid rgb(217, 217, 217);
+}
+
+.fa-arrow-left {
+  font-size: 1.5rem;
 }
 
 .account {

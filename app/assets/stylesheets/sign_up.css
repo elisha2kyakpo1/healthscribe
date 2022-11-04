@@ -77,10 +77,6 @@ input {
   border-bottom: 2px solid #e0e0e0;
 }
 
-.signup_div {
-  background-color: rgb(217, 217, 217);
-}
-
 /*  Label */
 .signup__label {
   color: #bdbdbd;
