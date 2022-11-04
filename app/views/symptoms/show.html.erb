@@ -5,7 +5,7 @@
 
   <div class="position-absolute action-btn d-flex justify-content-between">
  <%= link_to '<i class="fa-solid fa-pencil mr-2"></i>'.html_safe, edit_symptom_path(@symptom) %>
-    <%= link_to @symptom, method: :delete, class:"" do %>
+    <%= button_to @symptom, method: :delete, class:"" do %>
       <i class="fa-regular fa-trash-can mr-2"></i>
     <% end %><%= link_to '<i class="fa-solid fa-arrow-rotate-left"></i>'.html_safe, symptoms_path(@symptom) %>
   </div>
