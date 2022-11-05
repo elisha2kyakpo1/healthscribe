@@ -1,6 +1,11 @@
 .navlist {
   display: none;
   margin: 0;
+  box-shadow:
+  0 0.06875rem 0.0875rem rgb(4, 9, 20 / 3%),
+  0 0.0375rem 0.10625rem rgb(4, 9, 20 / 3%),
+  0 0.05rem 0.03125rem rgb(4, 9, 20 / 5%),
+  0 0.025rem 0.0875rem rgb(4, 9, 20 / 3%);
 }
 .expanded .navlist {
   display: block;
@@ -24,7 +29,7 @@
   position: absolute;
   transition: all 5s ease-in-out;
   right: 0;
-  top: 40px;
+  top: 45px;
   z-index: 5;
 }
 
