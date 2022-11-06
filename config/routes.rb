@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'entries/insight'
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :user
   resources :symptoms
