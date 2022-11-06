@@ -21,7 +21,7 @@ Devise.setup do |config|
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-  config.omniauth :google_oauth2, ENV['GOOGLE_OAUTH_CLIENT_ID'], ENV['GOOGLE_OAUTH_CLIENT_SECRET']
+  config.omniauth :google_oauth2, '145893185256-oroognjt4f58obao6ucd0ncee6bbiq29.apps.googleusercontent.com', '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'
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
