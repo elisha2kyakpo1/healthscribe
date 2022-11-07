@@ -6,6 +6,10 @@
     color: #32325d;
   }
 
+  .error {
+    list-style: none;
+  }
+
   .entries a {
     color: #32325d;
   }
