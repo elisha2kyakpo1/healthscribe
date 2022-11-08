@@ -1,125 +1,94 @@
 <div>
   <%= render "layouts/navbar" %>
- <div class="Home bg-white">
+<div id='Home'>
       <div class="welcome Hero">
-        <div 
-          class="position-relative py-4 container d-flex flex-column pt-5 align-items-center justify-content-center">
-          <div>
-            <h2 class="text-white">Welcome to HealthScribe</h2>
-            <p class="para text-white col-11 mr-auto col-md-8 mt-1 mt-md-3">
-              Keep track of your health related symptoms on all of your devices. Click learn more to see how HealthScribe works
+        <div
+          style="minHeight: width >= 575 ? 75vh : 60vh, overflowX: hidden"
+          class='position-relative d-flex flex-column flex-lg-row pt-5 align-items-center justify-content-center px-4 px-md-0'>
+          <div class="fw-bold text-white col-md-11 col-lg-5 text-center mb-50 mb-md-5 ps-md-5">
+            <p class="fw-bold text-white fs-5">Health Tracker</p>
+            <h2 class="fw-bold text-white fs-1">Welcome to HealthScribe</h2>
+            <p class='para text-white mt-1 mt-md-3 col-md-10 col-lg-10 mx-md-auto fs-5'>
+              Keep track of your health related symptoms on all of your devices. Click <span class="fw-bold">Learn More</span> to see how HealthScribe works.
             </p>
-            <div class="d-flex flex-column-reverse flex-md-row flex-md-wrap align-items-center gap-5 mt-5">
-              <%= link_to 'Create Account', symptoms_path, class: "learn" %>
+            <div class='d-flex gap-5 mt-5 justify-content-center'>
+              <%= button_to 'LEARN MORE', symptoms_path, class: "learn" %>
               <div class="view">
-                <%= link_to 'VIEW FEATURES', symptoms_path, class: "text-white view-features" %>
+                <%= button_to 'VIEW FEATURES', symptoms_path, class: "text-white view-features" %>
               </div>
             </div>
           </div>
-        </div>
-        <div class="people">
-          <%= svg_tag "People", class: "people-img" %>
+          <div class=' col-lg-7' style="overflowX: hidden">
+            <%= image_tag "/assets/people.png", class:"h-100 col-12 col-sm-0", style:"height: max-content" %>
+          </div>
         </div>
 
       </div>
-
-      <div class="second py-5 container text-center">
-        <h2 class="mt-5">Are you ready to improve your life?</h2>
-        <p class="col-sm-10 mt-4 col-md-7 mx-auto">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ipsa
-          possimus suscipit repellendus dolore, doloribus, voluptatem maiores
-          sapiente impedit, amet ipsum sint accusantium esse placeat!
-        </p>
-        <div class="d-flex flex-column flex-md-row col-12 justify-content-between col-md-10 mx-auto my-2 my-md-5">
-          <div class="col-9 mb-4 mb-md-0 mx-auto col-md-3">
-            <%= svg_tag "Logo" %>
-          </div>
-          <div class="col-9 mb-4 mb-md-0 mx-auto col-md-3">
-            <img class="img-fluclass" src={Logo} alt="Logo.svg" />
-          </div>
-          <div class="col-9 mb-4 mb-md-0 mx-auto col-md-3">
-            <img class="img-fluclass" src={Logo} alt="blank.svg" />
-          </div>
-        </div>
+      <div class='container mx-auto col-md-6 position-relative'>
+         <%= image_tag "/assets/ipad_cell.png", class:"img-fluid position-absolute", style:"top: -50" %>
       </div>
 
-      <div class="third">
-        <div class="container py-5">
-          <p class="mb-4 mt-0 mt-md-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-            reiciendis at atque class necessitatibus quam maxime. Est possimus
-            voluptatum aperiam! Natus voluptatum odio consequuntur ipsam
-            reiciendis asperiores quae tempore perferendis!
-          </p>
-          <div class="text-center my-4">
-            <%= link_to 'Try Now', new_user_registration_path, class: "learn" %>
-          </div>
-        </div>
-      </div>
-
-      <div class="fourth py-5 container gap-5">
-        <hr class="w-75 mx-auto" />
-        <h2 class="text-center mb-5 pb-5">How HealthScribe Works</h2>
-        <div class="mt-5 d-flex flex-column-reverse flex-md-row flex-md-wrap justify-content-between align-items-center">
-          <div class="col-12 col-md-6 mb-2 mb-md-5 ">
-            <div class="col-10 mx-auto">
-              <%=svg_tag "Insights"%>
+      <div id='fourth' class='py-5 container gap-5' style="margin-top: width >= 575 ? 25rem : 15rem">
+        <hr class='w-75 mx-auto' />
+        <h2 class='text-center mb-5 pb-2'>How HealthScribe Works</h2>
+        <div class='mt-5 d-flex flex-column-reverse flex-md-row flex-md-wrap justify-content-between align-items-center'>
+          <div class='col-12 col-md-6 mb-2 mb-md-5 '>
+            <div class='col-10 mx-auto text-center'>
+              <%= image_tag "/assets/create_profile.png", class:"img-fluid" %>
             </div>
           </div>
-          <div class="col-12 col-md-6 mb-0 mb-md-5">
-            <div class="col-11 col-md-10 mx-auto ">
+          <div class='col-12 col-md-6 mb-0 mb-md-5'>
+            <div class='col-11 col-md-10 mx-auto '>
             <h6>Create a profile</h6>
               <h3>Personalize the experience
-                to set and achieve your
-                goals</h3>
-              <p>Use your social media account to create/login
-                to a HealthSCribe account
-
+                to set and achieve your goals</h3>
+              <p class="mt-3 text-secondary fs-5">Use your social media account to create/login
+                to a HealthScribe account
               </p>
             </div>
           </div>
           </div>
-        <div class="mt-5 d-flex flex-column flex-md-row flex-md-wrap justify-content-between align-items-center">
-          <div class="col-12 col-md-5 my-1 my-md-5">
-          <div class="col-11 col-md-10 mx-auto">
+        <div class='mt-5 d-flex flex-column flex-md-row flex-md-wrap justify-content-between align-items-center'>
+          <div class='col-12 col-md-5 my-1 my-md-5'>
+          <div class='col-11 col-md-10 mx-auto'>
           <h6>Log your events</h6>
               <h3>Manage your health
                 information in one place</h3>
-              <p>Easily record and track your symptoms, medication, mood, food, and drinks 
+              <p class="mt-3 text-secondary fs-5">Easily record and track your symptoms, medication, mood, food, and drinks 
               </p>
             </div>
           </div>
-          <div class="col-12 col-md-6 mt-1 my-md-5">
-            <div class="col-10 mx-auto">
-              <%#=svg_tag "Log-event"%>
-              <%=svg_tag "Insights"%>
+          <div class='col-12 col-md-6 mt-1 my-md-5'>
+            <div class='col-10 mx-auto text-center'>
+              <%= image_tag "/assets/log_event.png", class:"img-fluid" %>
             </div>
           </div>
         </div>
-        <div class="mt-5 d-flex flex-column-reverse flex-md-row flex-md-wrap justify-content-between align-items-center">
-          <div class="col-12 col-md-6 mb-2 mb-md-5 ">
-            <div class="col-10 mx-auto">
-              <%=svg_tag "Insights"%>
+        <div class='mt-5 d-flex flex-column-reverse flex-md-row flex-md-wrap justify-content-between align-items-center'>
+          <div class='col-12 col-md-6 mb-2 mb-md-5 '>
+            <div class='col-10 mx-auto text-center'>
+              <img src={Insights} class='img-fluid' alt='' />
+              <%= image_tag "/assets/Insights.png", class:"img-fluid" %>
             </div>
           </div>
-          <div class="col-12 col-md-6 mb-0 mb-md-5">
-            <div class="col-11 col-md-10 mx-auto">
+          <div class='col-12 col-md-6 mb-0 mb-md-5'>
+            <div class='col-11 col-md-10 mx-auto'>
               <h6>View your data</h6>
               <h3>Analyze your information over time</h3>
-              <p>
+              <p class="mt-3 text-secondary fs-5">
               Visually compare your information to gain 
-              meaningful insights about your health 
+                meaningful insights about your health 
               </p>
             </div>
           </div>
           </div>
       </div>
 
-      <div class="bgPr footer">
-        <div class="container text-center text-white">
-          <p class="fs-3 fw-bold">Manage your Information 24/7 from any device.</p>
-          <p class="mb-4">Understanding your health has never been easier.</p>
-            <%= link_to 'Get Started', new_user_registration_path, class: "learn" %>
+      <div class='bgPr' style="paddingTop: 6rem, paddingBottom: 5rem">
+        <div class='container text-center text-light'>
+          <p class='fs-3 fw-bold'>Manage your Information 24/7 from any device.</p>
+          <p class='mb-5 '>Understanding your health has never been easier.</p>
+            <%= link_to 'Create Account', new_user_registration_path, class: "learn" %>
         </div>
       </div>
     </div>

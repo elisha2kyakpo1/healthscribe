@@ -92,6 +92,14 @@
     font-weight: 700;
   }
 
+.bgPr {
+  background-color: #368c9a;
+}
+
+  .get-start:hover{
+    color: #fff;
+  }
+
   .submit {
     color: white;
     border: 1px solid white;
@@ -147,12 +155,11 @@
   }
 
 
-  h2, h3 {
-    color: #32325D;
+h2, h3 {
+  color: #32325D;
 }
 h6 {
-    color: #F78104;
-    font-weight: 800;
+  color: #F78104;
 }
 
 .bottom {
@@ -218,7 +225,15 @@ h6 {
 
 a:hover {
   color: unset;
-  }
+}
+
+.image-tag {
+  height: max-content;
+}
+
+.cell {
+  top: -50%;
+}
 
 .para {
   font-weight: 400;
@@ -258,14 +273,17 @@ a {
   background-color: #008080;
 }
 
-h3  {
-  font-size: 36px;
+h3,
+h6 {
   font-weight: 700;
 }
 
-h6  {
+h3 {
+  font-size: 36px;
+}
+
+h6 {
   font-size: 20px;
-  font-weight: 700;
 }
 
 @media screen and (max-width: 768px) {
@@ -274,4 +292,3 @@ h6  {
   font-size: 18px;
   }
 }
-
