@@ -3,32 +3,32 @@
 <div id='Home'>
       <div class="welcome Hero">
         <div
-          style="minHeight: width >= 575 ? 75vh : 60vh, overflowX: hidden"
-          class='position-relative d-flex flex-column flex-lg-row pt-5 align-items-center justify-content-center px-4 px-md-0'>
+          style="overflow-x: hidden"
+          class='welcome-container position-relative d-flex flex-column flex-lg-row pt-5 align-items-center justify-content-center px-4 px-md-0'>
           <div class="fw-bold text-white col-md-11 col-lg-5 text-center mb-50 mb-md-5 ps-md-5">
             <p class="fw-bold text-white fs-5">Health Tracker</p>
             <h2 class="fw-bold text-white fs-1">Welcome to HealthScribe</h2>
             <p class='para text-white mt-1 mt-md-3 col-md-10 col-lg-10 mx-md-auto fs-5'>
               Keep track of your health related symptoms on all of your devices. Click <span class="fw-bold">Learn More</span> to see how HealthScribe works.
             </p>
-            <div class='d-flex gap-5 mt-5 justify-content-center'>
+            <div class='d-flex gap-5 mt-5 justify-content-center align-items-center'>
               <%= button_to 'LEARN MORE', symptoms_path, class: "learn" %>
               <div class="view">
                 <%= button_to 'VIEW FEATURES', symptoms_path, class: "text-white view-features" %>
               </div>
             </div>
           </div>
-          <div class=' col-lg-7' style="overflowX: hidden">
+          <div class=' col-lg-7'>
             <%= image_tag "/assets/people.png", class:"h-100 col-12 col-sm-0", style:"height: max-content" %>
           </div>
         </div>
 
       </div>
       <div class='container mx-auto col-md-6 position-relative'>
-         <%= image_tag "/assets/ipad_cell.png", class:"img-fluid position-absolute", style:"top: -50" %>
+         <%= image_tag "/assets/ipad_cell.png", class:"cell img-fluid position-absolute"%>
       </div>
 
-      <div id='fourth' class='py-5 container gap-5' style="margin-top: width >= 575 ? 25rem : 15rem">
+      <div id='fourth' class='py-5 how-it-works container gap-5'>
         <hr class='w-75 mx-auto' />
         <h2 class='text-center mb-5 pb-2'>How HealthScribe Works</h2>
         <div class='mt-5 d-flex flex-column-reverse flex-md-row flex-md-wrap justify-content-between align-items-center'>
@@ -84,11 +84,11 @@
           </div>
       </div>
 
-      <div class='bgPr' style="paddingTop: 6rem, paddingBottom: 5rem">
+      <div class='bgPr'>
         <div class='container text-center text-light'>
-          <p class='fs-3 fw-bold'>Manage your Information 24/7 from any device.</p>
-          <p class='mb-5 '>Understanding your health has never been easier.</p>
-            <%= link_to 'Create Account', new_user_registration_path, class: "learn" %>
+          <p class='fs-3 fw-bold text-white'>Manage your Information 24/7 from any device.</p>
+          <p class='mb-5 text-white'>Understanding your health has never been easier.</p>
+            <%= button_to 'Create Account', new_user_registration_path, class: "learn" %>
         </div>
       </div>
     </div>

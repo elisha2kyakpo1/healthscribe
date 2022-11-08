@@ -94,6 +94,7 @@
 
 .bgPr {
   background-color: #368c9a;
+  padding: 5rem 0;
 }
 
   .get-start:hover{
@@ -232,7 +233,7 @@ a:hover {
 }
 
 .cell {
-  top: -50%;
+  top: -50px;
 }
 
 .para {
@@ -292,3 +293,11 @@ h6 {
   font-size: 18px;
   }
 }
+
+@media screen and (min-width: 575px) {
+  .how-it-works {
+    margin-top: 25rem;
+  }
+}
+
+/* min-height: width >= 575 ? 75vh : 60vh,  */
