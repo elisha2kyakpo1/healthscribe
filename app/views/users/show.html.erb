@@ -22,6 +22,7 @@
             <div class="timeline-5 right-5">
               <div class="">
                 <div class="card-body position-relative">
+                  <%= svg_tag "Symptom", class: "show-sym-icon"%>
                   <h5 class="card-title">Symptom</h5>
                   <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= symptom.date.strftime("%F") %> | <%= symptom.time.strftime("%H:%M") %></span>
                   <p class="mt-2 mb-0"><%= symptom.comment %></p>
@@ -49,6 +50,7 @@
             <div class="timeline-5 right-5">
               <div class="">
                 <div class="card-body p-4">
+                  <%= svg_tag "Food", class: "show-icon"%>
                   <h5 class="card-title">Food</h5>
                   <h5><%= food.name %></h5>
                   <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= food.date.strftime("%F") %>|<%= food.time.strftime("%H:%M") %></span>
@@ -74,6 +76,7 @@
             <div class="timeline-5 right-5">
               <div class="">
                 <div class="card-body p-4">
+                  <%= svg_tag "Drink", class: "show-icon"%>
                   <h5 class="card-title">Drink</h5>
                   <h5><%= drink.name %></h5>
                   <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= drink.date.strftime("%F") %>|<%= drink.time.strftime("%H:%M") %></span>
@@ -100,6 +103,7 @@
             <div class="timeline-5 right-5">
               <div class="">
                 <div class="card-body p-4">
+                  <%= svg_tag "Medication", class: "show-icon"%>
                   <h5 class="card-title">Medication</h5>
                   <h5><%= medication.name %></h5>
                   <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= medication.date.strftime("%F") %>|<%= medication.time.strftime("%H:%M") %></span>
@@ -126,6 +130,7 @@
             <div class="timeline-5 right-5">
               <div class="">
                 <div class="card-body p-4">
+                  <%= svg_tag "Mood", class: "show-icon"%>
                   <h5 class="card-title">Mood</h5>
                   <h5><%= mood.mood %></h5>
                   <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= mood.date.strftime("%F") %>|<%= mood.time.strftime("%H:%M") %></span>

@@ -26,7 +26,7 @@ class SymptomsController < ApplicationController
 
     respond_to do |format|
       if @symptom.save
-        format.html { redirect_to symptom_url(@symptom), notice: 'Symptom was successfully created.' }
+        format.html { redirect_to user_path(current_user), notice: 'Symptom was successfully created.' }
         format.json { render :show, status: :created, location: @symptom }
       else
         format.html { render :new, status: :unprocessable_entity }

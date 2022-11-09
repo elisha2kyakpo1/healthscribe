@@ -187,6 +187,18 @@ h6 {
   border-bottom: 1px solid rgb(217, 217, 217);
 }
 
+.show-icon {
+  position: absolute;
+  left: -22px;
+  z-index: 5;
+}
+
+.show-sym-icon {
+  position: absolute;
+  left: -36px;
+  z-index: 5;
+}
+
 .fa-arrow-left {
   font-size: 1.5rem;
 }
