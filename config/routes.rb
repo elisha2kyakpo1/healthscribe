@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
   get 'entries/index'
-  get 'timelines/index'
   get 'pages/index'
   get 'entries/insight'
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  resources :user
+  resources :users
   resources :symptoms
   resources :medications
   resources :moods

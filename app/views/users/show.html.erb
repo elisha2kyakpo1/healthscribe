@@ -1,0 +1,141 @@
+<div class="sign-head">
+  <%= render "layouts/menu_bar" %>
+    <div class='d-flex gap-2 mx-5 gap-md-4 justify-content-between'>
+      <div class="d-flex align-items-center">
+        <%= svg_tag 'Timeline_Selected', class: "timeline" %>
+        <%= link_to 'Timeline', user_path(current_user), class: "time-insight py-3" %>
+      </div>
+      <div class="d-flex align-items-center">
+        <%= svg_tag 'Insights_Selected', class: "timeline" %>
+        <%= link_to 'Insight', entries_insight_path, class: "time-insight py-3" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class ="syptom_div">
+  <div class ="symptom_data">
+  <% if @my_symptoms.any? %>
+    <% @my_symptoms.each do |symptom| %>
+			<section class="gradient-custom-5">
+        <div class="container">
+          <div class="main-timeline-5">
+            <div class="timeline-5 right-5">
+              <div class="">
+                <div class="card-body position-relative">
+                  <h5 class="card-title">Symptom</h5>
+                  <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= symptom.date.strftime("%F") %> | <%= symptom.time.strftime("%H:%M") %></span>
+                  <p class="mt-2 mb-0"><%= symptom.comment %></p>
+                  <p class="mt-2 mb-0"><%#= symptom.intensity %></p>
+                  <p class="mt-2 mb-0"><%#= symptom.medications %></p>
+                  <%= link_to "View Details", symptom_url, class: "view btn btn-primary" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+		<% end %> 
+	<% end %>   
+
+</div>
+
+<div class ="syptom_div">
+  <div class ="symptom_data">
+  <% if @my_foods.any? %>
+    <% @my_foods.each do |food| %>
+			<section class="gradient-custom-5">
+        <div class="container">
+          <div class="main-timeline-5">
+            <div class="timeline-5 right-5">
+              <div class="">
+                <div class="card-body p-4">
+                  <h5><%= food.name %></h5>
+                  <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= food.date.strftime("%F") %>|<%= food.time.strftime("%H:%M") %></span>
+                  <p class="mt-2 mb-0"><%= food.comment %></p>
+                  <%= link_to "View Details", food_url, class: "view btn btn-primary" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+		<% end %> 
+	<% end %>   
+
+</div>
+<div class ="syptom_div">
+  <div class ="symptom_data">
+  <% if @my_drinks.any? %>
+    <% @my_drinks.each do |drink| %>
+			<section class="gradient-custom-5">
+        <div class="container">
+          <div class="main-timeline-5">
+            <div class="timeline-5 right-5">
+              <div class="">
+                <div class="card-body p-4">
+                  <h5><%= drink.name %></h5>
+                  <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= drink.date.strftime("%F") %>|<%= drink.time.strftime("%H:%M") %></span>
+                  <p class="mt-2 mb-0"><%= drink.comment %></p>
+                  <%= link_to "View Details", drink_url, class: "view btn btn-primary" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+		<% end %> 
+	<% end %>   
+
+</div>
+
+<div class ="syptom_div">
+  <div class ="symptom_data">
+  <% if @my_medications.any? %>
+    <% @my_medications.each do |medication| %>
+      <section class="gradient-custom-5">
+        <div class="container">
+          <div class="main-timeline-5">
+            <div class="timeline-5 right-5">
+              <div class="">
+                <div class="card-body p-4">
+                  <h5><%= medication.name %></h5>
+                  <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= medication.date.strftime("%F") %>|<%= medication.time.strftime("%H:%M") %></span>
+                  <p class="mt-2 mb-0"><%= medication.comment %></p>
+                  <%= link_to "View Details", medication_url, class: "view btn btn-primary" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+		<% end %> 
+	<% end %>   
+
+</div>
+
+<div class ="syptom_div">
+  <div class ="symptom_data">
+  <% if @my_moods.any? %>
+    <% @my_moods.each do |mood| %>
+      <section class="gradient-custom-5">
+        <div class="container">
+          <div class="main-timeline-5">
+            <div class="timeline-5 right-5">
+              <div class="">
+                <div class="card-body p-4">
+                  <h5><%= mood.mood %></h5>
+                  <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= mood.date.strftime("%F") %>|<%= mood.time.strftime("%H:%M") %></span>
+                  <p class="mt-2 mb-0"><%= mood.comment %></p>
+                  <%= link_to "View Details", mood_url, class: "view btn btn-primary" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+		<% end %> 
+	<% end %>   
+
+</div>
+<%= link_to (svg_tag "save_plus"), entries_index_path, class: "add" %>
