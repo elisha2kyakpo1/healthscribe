@@ -7,7 +7,7 @@
  <%= link_to '<i class="fa-solid fa-pencil mr-2"></i>'.html_safe, edit_symptom_path(@symptom) %>
     <%= button_to @symptom, method: :delete, class:"" do %>
       <i class="fa-solid fa-trash mr-2"></i>
-    <% end %><%= link_to '<i class="fa-solid fa-arrow-rotate-left"></i>'.html_safe, symptoms_path(@symptom) %>
+    <% end %><%= link_to '<i class="fa-solid fa-arrow-rotate-left"></i>'.html_safe, user_path(current_user) %>
   </div>
 </div>
 

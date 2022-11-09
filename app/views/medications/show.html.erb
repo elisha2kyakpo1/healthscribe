@@ -6,6 +6,6 @@
   <div class="position-absolute action-btn d-flex justify-content-between">
 <%= link_to '<i class="fa-solid fa-pencil mr-2"></i>'.html_safe, edit_medication_path(@medication) %>
       <%= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, medication_path(@medication), method: :delete, data: { confirm: 'Are you sure?' } %>
-      <%= link_to '<i class="fa-solid fa-arrow-rotate-left"></i>'.html_safe, medications_path(@medication) %>
+      <%= link_to '<i class="fa-solid fa-arrow-rotate-left"></i>'.html_safe, user_path(current_user) %>
   </div>
 </div>
