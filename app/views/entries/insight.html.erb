@@ -3,26 +3,22 @@
     <div class='bg-white d-flex gap-2 gap-md-4 justify-content-between'>
       <div class="d-flex time-line align-items-center">
         <%= svg_tag 'Timeline_Selected', class: "timeline" %>
-        <%= active_link_to 'Timeline', user_path(current_user), class: "time-insight py-3", active: :exclusive %>
-        <%#= link_to 'Timeline', user_path(current_user), class: "time-insight py-3" %>
+        <%= link_to 'Timeline', user_path(current_user), class: "time-insight py-3" %>
       </div>
-      <div class="d-flex insight align-items-center">
+      <div class="d-flex w-50 active active-link justify-content-center align-items-center">
         <%= svg_tag 'Insights_Selected', class: "timeline" %>
-        <%#= link_to 'Insight', user_path(current_user), class: "time-insight py-3" %>
-        <%= active_link_to 'Insight', entries_insight_path, class: "time-insight py-3", active: :exclusive %>
+        <%= link_to 'Insight', entries_insight_path, class: "time-insight py-3" %>
       </div>
     </div>
   </div>
 
-  
-
-  <div class="bg-white d-flex flex-column align-items-center justify-content-center">
-    <%= svg_tag 'coming_soon' %>
-    <p>Coming Soon</p>
-  </div>
+    <div class="bg-white d-flex flex-column align-items-center justify-content-center">
+      <%= svg_tag 'coming_soon' %>
+      <p>Coming Soon</p>
+    </div>
 
 <div class="add-item">
   <div class="add">
-<%= link_to '<i class="text-white fa-solid fa-plus"></i>'.html_safe, entries_index_path, class: "go-to-entries position-fixed border-0"%>
+    <%= link_to '<i class="text-white fa-solid fa-plus"></i>'.html_safe, entries_index_path, class: "go-to-entries position-fixed border-0"%>
   </div>
 </div>
