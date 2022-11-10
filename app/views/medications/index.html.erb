@@ -1,15 +1,14 @@
 <div class="down-margin">
-    <header class="text-center py-3 w-100 medication rounded px-4 text-light d-flex justify-content-between">
-    <p class="mb-0"> <%= link_to '<i class="text-white fa-solid fa-arrow-left"></i>'.html_safe, entries_index_path %></p>
-    <p class="mb-0 mx-auto d-flex text-white">
-        <%= svg_tag "Medication"%>
-        Medication
+    <header class="text-center header align-items-center w-100 medication px-4 text-light d-flex justify-content-between">
+    <p class="mb-0"> <%= link_to '<i class="text-white fa-solid fa-arrow-left"></i>'.html_safe, user_path(current_user) %></p>
+    <p class="mb-0 mx-auto d-flex align-items-center text-white">
+      <%= svg_tag "Medication", class: "form-icon"%>
+      <span>Medication</span>
     </p>
   </header>
 
   <div class="position-relative">
     <div id="medications">
-      <%= link_to "New medication", new_medication_path %>
       <% @medications.each do |medication| %>
         <%= render medication %>
       <% end %>

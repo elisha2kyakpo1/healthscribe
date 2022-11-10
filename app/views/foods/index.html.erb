@@ -1,16 +1,13 @@
-<p style="color: green"><%= notice %></p>
-
-  <header class="text-center py-3 w-100 medication rounded px-4 text-light d-flex justify-content-between">
-    <p class="mb-0"> <%= link_to '<i class="text-white fa-solid fa-arrow-left"></i>'.html_safe, medications_path %></p>
-    <p class="mb-0 mx-auto d-flex text-white">
-        <%= svg_tag "Food"%>
-        Food
-    </p>
-  </header>
+<header class="text-center header w-100 medication px-4 text-light d-flex justify-content-between align-items-center">
+  <p class="mb-0"> <%= link_to '<i class="text-white fa-solid fa-arrow-left"></i>'.html_safe, user_path(current_user) %></p>
+  <p class="mb-0 mx-auto d-flex align-items-center text-white">
+    <%= svg_tag "Food", class: "form-icon"%>
+    <span>Meal/Food</span>
+  </p>
+</header>
 <div id="foods">
   <% @foods.each do |food| %>
     <%= render food %>
   <% end %>
 </div>
 
-<%= link_to (svg_tag "save_plus"), new_food_path %>

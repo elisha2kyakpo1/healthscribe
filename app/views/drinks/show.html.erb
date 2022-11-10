@@ -4,9 +4,8 @@
   <%= render @drink %>
 
   <div class="position-absolute action-btn d-flex justify-content-between">
-<%= link_to '<i class="fa-solid fa-pencil mr-2"></i>'.html_safe, edit_drink_path(@drink) %>
-    <%= button_to @drink, method: :delete, class:"" do %>
-      <i class="fa-regular fa-trash-can mr-2"></i>
-    <% end %><%= link_to '<i class="fa-solid fa-arrow-rotate-left"></i>'.html_safe, user_path(current_user) %>
+  <%= link_to '<i class="fa-solid fa-pencil mr-2"></i>'.html_safe, edit_drink_path(@drink) %>
+  <%= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, drink_path(@drink), method: :delete, data: { confirm: 'Are you sure?' } %>
+   <%= link_to '<i class="fa-solid fa-arrow-rotate-left"></i>'.html_safe, user_path(current_user) %>
   </div>
 </div

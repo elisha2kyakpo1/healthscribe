@@ -1,11 +1,11 @@
 
-  <header class="text-center py-3 w-100 medication rounded px-4 text-light d-flex justify-content-between">
-    <p class="mb-0"> <%= link_to '<i class="text-white fa-solid fa-arrow-left"></i>'.html_safe, medications_path %></p>
-    <p class="mb-0 mx-auto d-flex text-white">
-        <%= svg_tag "Mood"%>
-        Mood
-    </p>
-  </header>
+<header class="text-center header align-items-center w-100 medication px-4 text-light d-flex justify-content-between">
+  <p class="mb-0"> <%= link_to '<i class="text-white fa-solid fa-arrow-left"></i>'.html_safe, user_path(current_user) %></p>
+  <div class="mb-0 mx-auto d-flex align-items-center text-white">
+    <%= svg_tag "Mood", class: "form-icon"%>
+    <span>Mood</span>
+  </div>
+</header>
 
 <div id="moods">
   <% @moods.each do |mood| %>
