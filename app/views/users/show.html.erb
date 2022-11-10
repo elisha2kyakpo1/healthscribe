@@ -29,7 +29,7 @@
                     <p class="mt-2 mb-0"><%= symptom.comment %></p>
                     <p class="mt-2 mb-0"><%#= symptom.intensity %></p>
                     <p class="mt-2 mb-0"><%#= symptom.medications %></p>
-                    <%= link_to "View Details", symptom_url, class: "view btn btn-primary" %>
+                    <%= link_to "View Details", symptoms_path(@symptom), class: "view btn btn-primary" %>
                   </div>
                 </div>
               </div>
@@ -56,7 +56,7 @@
                     <h5><%= food.name %></h5>
                     <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= food.date.strftime("%F") %>|<%= food.time.strftime("%H:%M") %></span>
                     <p class="mt-2 mb-0"><%= food.comment %></p>
-                    <%= link_to "View Details", food_url, class: "view btn btn-primary" %>
+                    <%= link_to "View Details", foods_path(@food), class: "view btn btn-primary" %>
                   </div>
                 </div>
               </div>
@@ -82,7 +82,7 @@
                     <h5><%= drink.name %></h5>
                     <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= drink.date.strftime("%F") %>|<%= drink.time.strftime("%H:%M") %></span>
                     <p class="mt-2 mb-0"><%= drink.comment %></p>
-                    <%= link_to "View Details", drink_url, class: "view btn btn-primary" %>
+                    <%= link_to "View Details", drinks_path(@drink), class: "view btn btn-primary" %>
                   </div>
                 </div>
               </div>
@@ -109,7 +109,7 @@
                     <h5><%= medication.name %></h5>
                     <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= medication.date.strftime("%F") %>|<%= medication.time.strftime("%H:%M") %></span>
                     <p class="mt-2 mb-0"><%= medication.comment %></p>
-                    <%= link_to "View Details", medication_url, class: "view btn btn-primary" %>
+                    <%= link_to "View Details", medications_path(@medication), class: "view btn btn-primary" %>
                   </div>
                 </div>
               </div>
@@ -136,7 +136,7 @@
                     <h5><%= mood.mood %></h5>
                     <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= mood.date.strftime("%F") %>|<%= mood.time.strftime("%H:%M") %></span>
                     <p class="mt-2 mb-0"><%= mood.comment %></p>
-                    <%= link_to "View Details", mood_url, class: "view btn btn-primary" %>
+                    <%= link_to "View Details", moods_path(@mood), class: "view btn btn-primary" %>
                   </div>
                 </div>
               </div>

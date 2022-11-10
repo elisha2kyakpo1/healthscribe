@@ -4,33 +4,33 @@
       <div class='w-100 header d-flex gap-2 gap-md-4 align-items-center justify-content-center'>
         <h4 class='para text-white mb-0'>Log Events</h4>
       </div>
-      <div class="px-5">
-        <div class="items d-flex py-3 align-items-center">
+      <div class="enter">
+        <div class="items d-flex ml-5 gap-3 py-3 align-items-center">
           <%= svg_tag "Food"%>
           <%= link_to 'Meal/food', new_food_path, class: '' %>
         </div>
-        <div class="d-flex items py-3 align-items-center">
+        <div class="d-flex items gap-3 py-3 align-items-center">
           <%= svg_tag "Drink"%>
           <%= link_to 'Drink', new_drink_path, class: '' %>
         </div>
 
-        <div class="d-flex items py-3 align-items-center">
+        <div class="d-flex items gap-3 py-3 align-items-center">
           <%= svg_tag "Mood"%>
           <%= link_to 'Mood', new_mood_path, class: '' %>
         </div>
 
-        <div class="d-flex items py-3 align-items-center">
+        <div class="d-flex items py-3 gap-3 align-items-center">
           <%= svg_tag "Medication"%>
           <%= link_to 'Medication', new_medication_path, class: '' %>
         </div>
 
-        <div class="d-flex items py-3 align-items-center">
+        <div class="d-flex items py-3 gap-3 align-items-center">
           <%= svg_tag "Symptom"%>
           <%= link_to 'Symptom', new_symptom_path, class: '' %>
         </div>
       </div>
       <div class="cancel">
-        <%= link_to '<i class="fa-sharp fa-solid fa-xmark"></i>'.html_safe, user_path(current_user) %>
+        <%= link_to '<i class="fa-sharp fa-solid fa-xmark"></i>'.html_safe, user_path(current_user), class: "go-to-entries position-fixed border-0" %>
       </div>
     </div>
   </div>
