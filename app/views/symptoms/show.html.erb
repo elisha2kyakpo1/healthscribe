@@ -4,10 +4,9 @@
   <%= render @symptom %>
 
   <div class="position-absolute action-btn d-flex justify-content-between">
- <%= link_to '<i class="fa-solid fa-pencil mr-2"></i>'.html_safe, edit_symptom_path(@symptom) %>
-    <%= button_to @symptom, method: :delete, class:"" do %>
-      <i class="fa-solid fa-trash mr-2"></i>
-    <% end %><%= link_to '<i class="fa-solid fa-arrow-rotate-left"></i>'.html_safe, user_path(current_user) %>
+  <%= link_to '<i class="fa-solid fa-pencil mr-2"></i>'.html_safe, edit_symptom_path(@symptom) %>
+  <%= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, symptom_path(@symptom), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
+  <%= link_to '<i class="fa-solid fa-arrow-rotate-left"></i>'.html_safe, user_path(current_user) %>
   </div>
 </div>
 
