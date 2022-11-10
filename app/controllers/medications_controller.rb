@@ -50,7 +50,7 @@ class MedicationsController < ApplicationController
     @medication.destroy
 
     respond_to do |format|
-      format.html { redirect_to medications_url, notice: 'Medication was successfully destroyed.' }
+      format.html { redirect_to user_path(current_user), notice: 'Medication was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -53,7 +53,7 @@ class MoodsController < ApplicationController
     @mood.destroy
 
     respond_to do |format|
-      format.html { redirect_to moods_url, notice: 'Mood was successfully destroyed.' }
+      format.html { redirect_to user_path(current_user), notice: 'Mood was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
