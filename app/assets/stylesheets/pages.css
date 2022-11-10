@@ -40,16 +40,16 @@
     position: absolute;
     bottom: 30px;
     right: 30px;
+    background-color: #368c9a;
+    border-radius: 50%;
   }
 
   .cancel .fa-xmark {
     display: inline-block;
     color: #fff;
-    border-radius: 50%;
-    background-color: rgb(64, 180, 190);
-    width: 40px;
-    height: 40px;
-    padding: 10px;
+    width: 20px;
+    height: 20px;
+    padding: 20px 20px 10px 20px;
     font-weight: 100;
   }
 
@@ -93,8 +93,26 @@
   }
 
 .bgPr {
-  background-color: #368c9a;
+  background-color: #008080;
   padding: 5rem 0;
+}
+
+.go-to-entries {
+  bottom: 5%;
+  height: 60px;
+  width: 60px;
+  right: 5%;
+  border-radius: 50%;
+  background-color: #368c9a; 
+}
+
+.go-to-entries .fa-plus {
+  display: inline-block;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  padding: 20px 20px 10px 20px;
+  font-weight: 100;
 }
 
   .get-start:hover{
@@ -309,8 +327,10 @@ h6 {
   font-size: 20px;
 }
 
-.how-it-works {
-  margin-top: 25rem;
+@media (min-width: 768px) {
+  .how-it-works {
+    margin-top: 25rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -318,6 +338,7 @@ h6 {
   h6 {
   font-size: 18px;
   }
+  .how-it-works {
+    margin-top: 15rem;
+  }
 }
-
-/* min-height: width >= 575 ? 75vh : 60vh,  */
