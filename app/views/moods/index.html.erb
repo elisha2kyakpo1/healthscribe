@@ -10,10 +10,6 @@
 <div id="moods">
   <% @moods.each do |mood| %>
     <%= render mood %>
-    <p>
-      <%= link_to "Show this mood", mood %>
-    </p>
   <% end %>
 </div>
 
-<%= link_to (svg_tag "save_plus"), new_mood_path %>

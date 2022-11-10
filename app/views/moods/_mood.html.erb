@@ -4,10 +4,12 @@
       <div class="timeline-5 right-5">
         <div class="">
           <div class="card-body p-4">
+            <%= svg_tag "Mood", class: "show-icon"%>
+            <h5 class="card-title">Mood</h5>
             <h5><%= mood.mood %></h5>
             <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= mood.date.strftime("%F") %>|<%= mood.time.strftime("%H:%M") %></span>
             <p class="mt-2 mb-0"><%= mood.comment %></p>
-          </div>
+            <%= link_to "View Details", mood, class: "view btn btn-primary" %>          </div>
         </div>
       </div>
     </div>

@@ -4,10 +4,12 @@
       <div class="timeline-5 right-5">
         <div class="">
           <div class="card-body p-4">
+            <%= svg_tag "Medication", class: "show-icon"%>
+            <h5 class="card-title">Medication</h5>
             <h5><%= medication.name %></h5>
             <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= medication.date.strftime("%F") %>|<%= medication.time.strftime("%H:%M") %></span>
             <p class="mt-2 mb-0"><%= medication.comment %></p>
-          </div>
+            <%= link_to "View Details", medication, class: "view btn btn-primary" %>          </div>
         </div>
       </div>
     </div>

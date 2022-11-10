@@ -10,10 +10,6 @@
 <div id="drinks">
   <% @drinks.each do |drink| %>
     <%= render drink %>
-    <p>
-      <%= link_to "View Details", drink %>
-    </p>
   <% end %>
 </div>
 
-<%= link_to (svg_tag "save_plus"), new_drink_path %>
