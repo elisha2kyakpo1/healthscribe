@@ -24,12 +24,16 @@
                 <div class="">
                   <div class="card-body position-relative">
                     <%= svg_tag "Symptom", class: "show-sym-icon"%>
-                    <h5 class="card-title">Symptom</h5>
-                    <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= symptom.date.strftime("%F") %> | <%= symptom.time.strftime("%H:%M") %></span>
+                    <h6 class="datetime text-dark">Symptom</h6>
+
+                    <article class="d-flex flex-column align-items-center position-absolute datetime">
+                      <div><%#= symptom.date.to_formatted_s(:rfc822) %></div>
+                      <div class="item-name"><%= symptom.time.strftime("%I:%M%p") %></div>
+                    </article>
                     <p class="mt-2 mb-0"><%= symptom.comment %></p>
                     <p class="mt-2 mb-0"><%#= symptom.intensity %></p>
                     <p class="mt-2 mb-0"><%#= symptom.medications %></p>
-                    <%= link_to "View Details", symptoms_path(@symptom), class: "view btn btn-primary" %>
+                    <%#= link_to "View Details", symptoms_path(@symptom), class: "view btn btn-primary" %>
                   </div>
                 </div>
               </div>
@@ -52,11 +56,13 @@
                 <div class="">
                   <div class="card-body p-4">
                     <%= svg_tag "Food", class: "show-icon"%>
-                    <h5 class="card-title">Food</h5>
-                    <h5><%= food.name %></h5>
-                    <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= food.date.strftime("%F") %>|<%= food.time.strftime("%H:%M") %></span>
-                    <p class="mt-2 mb-0"><%= food.comment %></p>
-                    <%= link_to "View Details", foods_path(@food), class: "view btn btn-primary" %>
+                    <h6 class="datetime text-dark">Food</h6>
+                    <p class="item-name"><%= food.name %></p>
+                    <article class="d-flex flex-column align-items-center position-absolute datetime">
+                      <div><%#= food.date.to_formatted_s(:rfc822) %></div>
+                      <p class="item-name"><%= food.time.strftime("%I:%M%p") %></p>
+                    </article>                    <p class="mt-2 mb-0"><%= food.comment %></p>
+                    <%#= link_to "View Details", foods_path(@food), class: "view btn btn-primary" %>
                   </div>
                 </div>
               </div>
@@ -78,11 +84,14 @@
                 <div class="">
                   <div class="card-body p-4">
                     <%= svg_tag "Drink", class: "show-icon"%>
-                    <h5 class="card-title">Drink</h5>
-                    <h5><%= drink.name %></h5>
-                    <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= drink.date.strftime("%F") %>|<%= drink.time.strftime("%H:%M") %></span>
+                    <h6 class="datetime text-dark">Drink</h6>
+                    <p class="item-name"><%= drink.name %></p>
+                    <article class="position-absolute flex-column datetime d-flex align-items-center">
+                      <div><%#= drink.date.to_formatted_s(:rfc822) %></div>
+                      <p class="item-name"><%= drink.time.strftime("%I:%M%p") %></p>
+                    </article>
                     <p class="mt-2 mb-0"><%= drink.comment %></p>
-                    <%= link_to "View Details", drinks_path(@drink), class: "view btn btn-primary" %>
+                    <%#= link_to "View Details", drinks_path(@drink), class: "view btn btn-primary" %>
                   </div>
                 </div>
               </div>
@@ -105,11 +114,13 @@
                 <div class="">
                   <div class="card-body p-4">
                     <%= svg_tag "Medication", class: "show-icon"%>
-                    <h5 class="card-title">Medication</h5>
-                    <h5><%= medication.name %></h5>
-                    <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= medication.date.strftime("%F") %>|<%= medication.time.strftime("%H:%M") %></span>
-                    <p class="mt-2 mb-0"><%= medication.comment %></p>
-                    <%= link_to "View Details", medications_path(@medication), class: "view btn btn-primary" %>
+                    <h6 class="datetime text-dark">Medication</h6>
+                    <p class="item-name"><%= medication.name %></p>
+                    <article class="position-absolute flex-column datetime d-flex align-items-center">
+                      <div><%#= medication.date.to_formatted_s(:rfc822) %></div>
+                      <p class="item-name"><%= medication.time.strftime("%I:%M%p") %></p>
+                    </article>                    <p class="mt-2 mb-0"><%= medication.comment %></p>
+                    <%#= link_to "View Details", medications_path(@medication), class: "view btn btn-primary" %>
                   </div>
                 </div>
               </div>
@@ -132,11 +143,15 @@
                 <div class="">
                   <div class="card-body p-4">
                     <%= svg_tag "Mood", class: "show-icon"%>
-                    <h5 class="card-title">Mood</h5>
-                    <h5><%= mood.mood %></h5>
-                    <span class="small text-muted"><i class="fas fa-clock me-1"></i><%= mood.date.strftime("%F") %>|<%= mood.time.strftime("%H:%M") %></span>
-                    <p class="mt-2 mb-0"><%= mood.comment %></p>
-                    <%= link_to "View Details", moods_path(@mood), class: "view btn btn-primary" %>
+                    <h6 class="datetime text-dark">Mood</h6>
+                    <p class="item-name"><%= mood.mood %></p>
+                    <article class="position-absolute flex-column datetime d-flex align-items-center">
+                      <div><%#= mood.date.to_formatted_s(:rfc822) %></div>
+                      <p class="item-name"><%= mood.time.strftime("%I:%M%p") %></p>
+                    </article>                    <p class="mt-2 mb-0"><%= mood.comment %></p>
+                    <%#= link_to "View Details", moods_path(@mood), class: "view btn btn-primary" %>
+                      <%#= link_to '<i class="fa-solid fa-pencil mr-2"></i>'.html_safe, edit_mood_path(mood) %>
+                      <%#= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, mood_path(mood), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
                   </div>
                 </div>
               </div>

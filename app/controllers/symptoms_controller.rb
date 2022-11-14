@@ -39,7 +39,7 @@ class SymptomsController < ApplicationController
   def update
     respond_to do |format|
       if @symptom.update(symptom_params)
-        format.html { redirect_to symptom_url(@symptom), notice: 'Symptom was successfully updated.' }
+        format.html { redirect_to user_path(current_user), notice: 'Symptom was successfully updated.' }
         format.json { render :show, status: :ok, location: @symptom }
       else
         format.html { render :edit, status: :unprocessable_entity }

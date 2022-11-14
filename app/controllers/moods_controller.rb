@@ -39,7 +39,7 @@ class MoodsController < ApplicationController
   def update
     respond_to do |format|
       if @mood.update(mood_params)
-        format.html { redirect_to mood_url(@mood), notice: 'Mood was successfully updated.' }
+        format.html { redirect_to user_path(current_user), notice: 'Mood was successfully updated.' }
         format.json { render :show, status: :ok, location: @mood }
       else
         format.html { render :edit, status: :unprocessable_entity }

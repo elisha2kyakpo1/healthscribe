@@ -4,6 +4,25 @@
   margin-left: 5%;
 }
 
+.datetime {
+  left: -12%;
+  top: 25%;
+}
+
+.datetime div {
+  font-weight: 700;
+  color: #252B42;
+  width: 55%;
+}
+
+.datetime p {
+  color: #737373;
+}
+
+.item-name {
+  color: #737373;
+}
+
 /* The actual timeline (the vertical ruler) */
 .main-timeline-5::after {
   content: "";

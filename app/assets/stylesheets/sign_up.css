@@ -77,6 +77,11 @@ input {
   border-bottom: 2px solid #e0e0e0;
 }
 
+.delete-acc button {
+  background-color: red;
+  color: #fff;
+}
+
 /*  Label */
 .signup__label {
   color: #bdbdbd;

@@ -36,7 +36,7 @@ class MedicationsController < ApplicationController
   def update
     respond_to do |format|
       if @medication.update(medication_params)
-        format.html { redirect_to medication_url(@medication), notice: 'Medication was successfully updated.' }
+        format.html { redirect_to user_path(current_user), notice: 'Medication was successfully updated.' }
         format.json { render :show, status: :ok, location: @medication }
       else
         format.html { render :edit, status: :unprocessable_entity }

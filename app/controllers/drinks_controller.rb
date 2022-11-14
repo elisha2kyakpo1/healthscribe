@@ -40,7 +40,7 @@ class DrinksController < ApplicationController
   def update
     respond_to do |format|
       if @drink.update(drink_params)
-        format.html { redirect_to drink_url(@drink), notice: 'Drink was successfully updated.' }
+        format.html { redirect_to user_path(current_user), notice: 'Drink was successfully updated.' }
         format.json { render :show, status: :ok, location: @drink }
       else
         format.html { render :edit, status: :unprocessable_entity }
