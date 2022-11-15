@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  resources :users
+  resources :users, only: [:show] do
+    get 'users/:id', to: 'users#show', as: 'timeline'
+    get 'users/:id/hovercard', to: 'users#hovercard', as: 'hovercard'
+  end
   resources :symptoms
   resources :medications
   resources :moods

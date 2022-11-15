@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  def index
-    #@users = User.includes(:symptoms, :medications, :foods, :moods, :drinks).all
+  def hovercard
+    @user = User.find(params[:id])
   end
 
   def show

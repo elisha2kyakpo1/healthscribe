@@ -1,0 +1,51 @@
+.hoverWrapper #hoverContent {
+  display: none;
+  position: absolute;
+  left: 0;
+  z-index: 5;
+}
+
+.hoverWrapper:hover #hoverContent {
+  /* display: block; */
+}
+
+.button_to,
+.editbtn {
+  color: white;
+  margin: 4px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.button_to {
+  background-color: #f44336;
+  padding: 4px;
+}
+.editbtn {
+  background-color: #737373;
+  text-align: center;
+  padding: 4px;
+  margin-right: 3px;
+}
+
+.editbtn:hover {
+  color: #fff;
+}
+
+.card-action {
+  width: 30%;
+  box-shadow: 0 0 10px 0 rgba(0,0,0, .35);
+  background:#fff;
+  color: #507162;
+  padding: 1rem;
+}
+
+.card__text {
+  margin: 0;
+}
+
+.card__text {
+  text-align: right;
+}

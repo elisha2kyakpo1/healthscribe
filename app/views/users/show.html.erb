@@ -33,7 +33,11 @@
                     <p class="mt-2 mb-0"><%= symptom.comment %></p>
                     <p class="mt-2 mb-0"><%#= symptom.intensity %></p>
                     <p class="mt-2 mb-0"><%#= symptom.medications %></p>
-                    <%#= link_to "View Details", symptoms_path(@symptom), class: "view btn btn-primary" %>
+                    <div id="hoverContent" class="rounded-1 card-action">
+                     <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hovercard_path(current_user) do %>
+                        Loading...
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -54,7 +58,7 @@
             <div class="main-timeline-5">
               <div class="timeline-5 right-5">
                 <div class="">
-                  <div class="card-body p-4">
+                  <div class="card-body p-4 hoverWrapper">
                     <%= svg_tag "Food", class: "show-icon"%>
                     <h6 class="datetime text-dark">Food</h6>
                     <p class="item-name"><%= food.name %></p>
@@ -62,7 +66,11 @@
                       <div><%#= food.date.to_formatted_s(:rfc822) %></div>
                       <p class="item-name"><%= food.time.strftime("%I:%M%p") %></p>
                     </article>                    <p class="mt-2 mb-0"><%= food.comment %></p>
-                    <%#= link_to "View Details", foods_path(@food), class: "view btn btn-primary" %>
+                    <div id="hoverContent" class="rounded-1 card-action">
+                      <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hovercard_path(current_user) do %>
+                        Loading...
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -82,7 +90,7 @@
             <div class="main-timeline-5">
               <div class="timeline-5 right-5">
                 <div class="">
-                  <div class="card-body p-4">
+                  <div class="card-body p-4 hoverWrapper">
                     <%= svg_tag "Drink", class: "show-icon"%>
                     <h6 class="datetime text-dark">Drink</h6>
                     <p class="item-name"><%= drink.name %></p>
@@ -91,7 +99,11 @@
                       <p class="item-name"><%= drink.time.strftime("%I:%M%p") %></p>
                     </article>
                     <p class="mt-2 mb-0"><%= drink.comment %></p>
-                    <%#= link_to "View Details", drinks_path(@drink), class: "view btn btn-primary" %>
+                    <div id="hoverContent" class="rounded-1 card-action">
+                      <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hovercard_path(current_user) do %>
+                        Loading...
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -112,7 +124,7 @@
             <div class="main-timeline-5">
               <div class="timeline-5 right-5">
                 <div class="">
-                  <div class="card-body p-4">
+                  <div class="card-body p-4 hoverWrapper">
                     <%= svg_tag "Medication", class: "show-icon"%>
                     <h6 class="datetime text-dark">Medication</h6>
                     <p class="item-name"><%= medication.name %></p>
@@ -120,7 +132,11 @@
                       <div><%#= medication.date.to_formatted_s(:rfc822) %></div>
                       <p class="item-name"><%= medication.time.strftime("%I:%M%p") %></p>
                     </article>                    <p class="mt-2 mb-0"><%= medication.comment %></p>
-                    <%#= link_to "View Details", medications_path(@medication), class: "view btn btn-primary" %>
+                    <div id="hoverContent" class="rounded-1 card-action">
+                      <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hovercard_path(current_user) do %>
+                        Loading...
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -141,17 +157,21 @@
             <div class="main-timeline-5">
               <div class="timeline-5 right-5">
                 <div class="">
-                  <div class="card-body p-4">
+                  <div class="card-body p-4 hoverWrapper">
                     <%= svg_tag "Mood", class: "show-icon"%>
                     <h6 class="datetime text-dark">Mood</h6>
                     <p class="item-name"><%= mood.mood %></p>
                     <article class="position-absolute flex-column datetime d-flex align-items-center">
                       <div><%#= mood.date.to_formatted_s(:rfc822) %></div>
                       <p class="item-name"><%= mood.time.strftime("%I:%M%p") %></p>
-                    </article>                    <p class="mt-2 mb-0"><%= mood.comment %></p>
-                    <%#= link_to "View Details", moods_path(@mood), class: "view btn btn-primary" %>
-                      <%#= link_to '<i class="fa-solid fa-pencil mr-2"></i>'.html_safe, edit_mood_path(mood) %>
-                      <%#= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, mood_path(mood), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
+                    </article>
+                    <p class="mt-2 mb-0"><%= mood.comment %></p>
+                    <div id="hoverContent" class="rounded-1 card-action">
+                      
+                      <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hovercard_path(current_user) do %>
+                        Loading...
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               </div>

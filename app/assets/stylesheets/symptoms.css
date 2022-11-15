@@ -1,11 +1,11 @@
 .main-timeline-5 {
   position: relative;
   margin-right: auto;
-  margin-left: 5%;
+  margin-left: 25%;
 }
 
 .datetime {
-  left: -12%;
+  left: -32%;
   top: 25%;
 }
 
@@ -91,12 +91,17 @@ p {
   margin-right: 30px
 }
 
-@media (max-width: 991px) {
+@media (min-width: 768px) {
   .main-timeline-5 {
     max-width: 100%;
+    margin-left: 5%;
+  }
+
+  .datetime {
+    left: -17%;
+    top: 25%;
   }
 }
 .gradient-custom-5 {
-  /* fallback for old browsers */
   background-color: #fff;
 }
