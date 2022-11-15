@@ -102,6 +102,14 @@ p {
     top: 25%;
   }
 }
+
+@media (min-width: 992px) {
+  .main-timeline-5 {
+    max-width: 100%;
+    margin-left: 5%;
+  }
+
+}
 .gradient-custom-5 {
   background-color: #fff;
 }
