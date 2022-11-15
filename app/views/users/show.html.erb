@@ -22,7 +22,7 @@
             <div class="main-timeline-5">
               <div class="timeline-5 right-5">
                 <div class="">
-                  <div class="card-body position-relative">
+                  <div class="card-body position-relative hoverWrapper">
                     <%= svg_tag "Symptom", class: "show-sym-icon"%>
                     <h6 class="datetime text-dark">Symptom</h6>
 
@@ -30,11 +30,10 @@
                       <div><%#= symptom.date.to_formatted_s(:rfc822) %></div>
                       <div class="item-name"><%= symptom.time.strftime("%I:%M%p") %></div>
                     </article>
-                    <p class="mt-2 mb-0"><%= symptom.comment %></p>
                     <p class="mt-2 mb-0"><%#= symptom.intensity %></p>
                     <p class="mt-2 mb-0"><%#= symptom.medications %></p>
-                    <div id="hoverContent" class="rounded-1 card-action">
-                     <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hovercard_path(current_user) do %>
+                    <div class="hoverContent rounded-1 card-action">
+                     <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hover_symptom_path(current_user) do %>
                         Loading...
                       <% end %>
                     </div>
@@ -63,11 +62,10 @@
                     <h6 class="datetime text-dark">Food</h6>
                     <p class="item-name"><%= food.name %></p>
                     <article class="d-flex flex-column align-items-center position-absolute datetime">
-                      <div><%#= food.date.to_formatted_s(:rfc822) %></div>
                       <p class="item-name"><%= food.time.strftime("%I:%M%p") %></p>
                     </article>                    <p class="mt-2 mb-0"><%= food.comment %></p>
-                    <div id="hoverContent" class="rounded-1 card-action">
-                      <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hovercard_path(current_user) do %>
+                    <div class="hoverContent rounded-1 card-action">
+                      <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hover_food_path(current_user) do %>
                         Loading...
                       <% end %>
                     </div>
@@ -98,9 +96,8 @@
                       <div><%#= drink.date.to_formatted_s(:rfc822) %></div>
                       <p class="item-name"><%= drink.time.strftime("%I:%M%p") %></p>
                     </article>
-                    <p class="mt-2 mb-0"><%= drink.comment %></p>
-                    <div id="hoverContent" class="rounded-1 card-action">
-                      <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hovercard_path(current_user) do %>
+                    <div class="hoverContent rounded-1 card-action">
+                      <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hover_drink_path(current_user) do %>
                         Loading...
                       <% end %>
                     </div>
@@ -129,11 +126,10 @@
                     <h6 class="datetime text-dark">Medication</h6>
                     <p class="item-name"><%= medication.name %></p>
                     <article class="position-absolute flex-column datetime d-flex align-items-center">
-                      <div><%#= medication.date.to_formatted_s(:rfc822) %></div>
                       <p class="item-name"><%= medication.time.strftime("%I:%M%p") %></p>
                     </article>                    <p class="mt-2 mb-0"><%= medication.comment %></p>
-                    <div id="hoverContent" class="rounded-1 card-action">
-                      <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hovercard_path(current_user) do %>
+                    <div class="hoverContent rounded-1 card-action">
+                      <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hover_medication_path(current_user) do %>
                         Loading...
                       <% end %>
                     </div>
@@ -162,13 +158,11 @@
                     <h6 class="datetime text-dark">Mood</h6>
                     <p class="item-name"><%= mood.mood %></p>
                     <article class="position-absolute flex-column datetime d-flex align-items-center">
-                      <div><%#= mood.date.to_formatted_s(:rfc822) %></div>
                       <p class="item-name"><%= mood.time.strftime("%I:%M%p") %></p>
                     </article>
-                    <p class="mt-2 mb-0"><%= mood.comment %></p>
-                    <div id="hoverContent" class="rounded-1 card-action">
+                    <div class="hoverContent rounded-1 card-action">
                       
-                      <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hovercard_path(current_user) do %>
+                      <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hover_mood_path(current_user) do %>
                         Loading...
                       <% end %>
                     </div>

@@ -1,6 +1,17 @@
 class UsersController < ApplicationController
-  def hovercard
-    @user = User.find(params[:id])
+  def hover_mood
+  end
+
+  def hover_medication
+  end
+
+  def hover_food
+  end
+
+  def hover_symptom
+  end
+
+  def hover_drink
   end
 
   def show

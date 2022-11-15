@@ -1,0 +1,22 @@
+<%= turbo_frame_tag dom_id(current_user, :thumbnail) do %>
+  <div class="">
+    <% if current_user.drinks.any? %>
+      <% current_user.drinks.each do |drink| %>
+        <% if !drink.comment%>
+          <p class="mt-2 mb-0"><%= drink.comment %></p>
+        <% else %>
+          <p class="mt-2 mb-0">No comment recorded for this drink!</p>
+        <% end %>
+        <small><%= time_ago_in_words(drink.created_at) %> ago </small>
+        <div class="d-flex justify-content-between align-items-center">
+          <%= link_to "Edit", edit_drink_path(drink), class:"editbtn" %>
+          <div class="deletebtn">
+            <%= button_to "Delete", drink_path(drink), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>No drink recorded!</p>
+    <% end %>
+  </div>
+<% end %>

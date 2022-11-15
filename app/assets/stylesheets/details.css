@@ -1,32 +1,40 @@
-.hoverWrapper #hoverContent {
+.hoverWrapper .hoverContent {
   display: none;
   position: absolute;
-  left: 0;
   z-index: 5;
+  top: 65%;
 }
 
-.hoverWrapper:hover #hoverContent {
-  /* display: block; */
+.hoverWrapper:hover .hoverContent {
+  display: block;
 }
 
+.deletebtn *,
 .editbtn {
-  color: white;
-  margin: 4px 0;
   border: none;
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
+  font-weight: 700;
+}
+
+.deletebtn {
+  width: 100%;
+}
+
+.deletebtn * {
+  color: #f44336;
+  background: none;
 }
 
 .editbtn {
-  background-color: #737373;
+  color: #008080;
   text-align: center;
-  padding: 4px;
   margin-right: 3px;
 }
 
 .editbtn:hover {
-  color: #fff;
+  color: #008080;
 }
 
 .card-action {

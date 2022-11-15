@@ -331,6 +331,10 @@ h6 {
   .how-it-works {
     margin-top: 25rem;
   }
+
+  .two-buttons {
+    flex-wrap: wrap;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -340,5 +344,9 @@ h6 {
   }
   .how-it-works {
     margin-top: 15rem;
+  }
+
+  .two-buttons {
+    flex-direction: column;
   }
 }
