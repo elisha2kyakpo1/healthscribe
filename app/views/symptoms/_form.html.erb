@@ -39,7 +39,8 @@
                 <div class="d-flex justify-content-center justify-content-md-end gap-4 mt-4 me-4">
                   <%= form.label key, class: "form-label"%>
                   <%#= form.check_box :intensity, { multiple: true, checked: form.object.intensity&.include?(key.to_s) }, key, nil %>
-                  <%= range_field(:intensity, key, {multiple: true, class: "form-range", min:0, max:5, step:1, value:0}) %>
+                  <%= range_field(:intensity, key, name:'customRange', data-target:"rangeslider.range", data-action:"input->rangeslider#updateValue", {multiple: true, class: "form-range", min:0, max:5, step:1, value:0}) %>
+                  <output class="range-slider__value" data-target="rangeslider.value">0</output>
                 </div>
               <% end %>
               <div class="mt-5">

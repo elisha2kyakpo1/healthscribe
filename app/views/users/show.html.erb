@@ -22,18 +22,15 @@
             <div class="main-timeline-5">
               <div class="timeline-5 right-5">
                 <div class="">
-                  <div class="card-body position-relative hoverWrapper">
-                    <%= svg_tag "Symptom", class: "show-sym-icon"%>
+                  <div class="card-body p-4 hoverWrapper">
+                    <%= svg_tag "Symptom", class: "show-icon"%>
                     <h6 class="datetime text-dark">Symptom</h6>
-
+                    <p class="item-name"><%= symptom.intensity %></p>
                     <article class="d-flex flex-column align-items-center position-absolute datetime">
-                      <div><%#= symptom.date.to_formatted_s(:rfc822) %></div>
-                      <div class="item-name"><%= symptom.time.strftime("%I:%M%p") %></div>
-                    </article>
-                    <p class="mt-2 mb-0"><%#= symptom.intensity %></p>
-                    <p class="mt-2 mb-0"><%#= symptom.medications %></p>
+                      <p class="item-name"><%= symptom.time.strftime("%I:%M%p") %></p>
+                    </article>                    <p class="mt-2 mb-0"><%= symptom.comment %></p>
                     <div class="hoverContent rounded-1 card-action">
-                     <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hover_symptom_path(current_user) do %>
+                      <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hover_symptom_path(current_user) do %>
                         Loading...
                       <% end %>
                     </div>
@@ -45,7 +42,6 @@
         </section>
       <% end %> 
     <% end %>   
-
   </div>
 
   <div class ="syptom_div">
@@ -77,7 +73,6 @@
         </section>
       <% end %> 
     <% end %>   
-
   </div>
   <div class ="syptom_div">
     <div class ="symptom_data">

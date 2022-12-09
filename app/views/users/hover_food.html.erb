@@ -3,7 +3,7 @@
     <%#= current_user.full_name%>
     <% if current_user.foods.any? %>
       <% current_user.foods.each do |food| %>
-        <% if !food.comment%>
+        <% if food.comment%>
           <p class="mt-2 mb-0"><%= food.comment %></p>
         <% else %>
           <p class="mt-2 mb-0">No comment recorded for this food!</p>

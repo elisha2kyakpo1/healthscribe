@@ -3,7 +3,7 @@
     <%#= current_user.full_name%>
     <% if current_user.medications.any? %>
       <% current_user.medications.each do |medication| %>
-        <% if !medication.comment%>
+        <% if medication.comment %>
           <p class="mt-2 mb-0"><%= medication.comment %></p>
         <% else %>
           <p class="mt-2 mb-0">No comment recorded for this medication!</p>

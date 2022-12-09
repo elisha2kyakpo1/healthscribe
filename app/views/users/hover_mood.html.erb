@@ -2,7 +2,7 @@
   <div class="">
     <% if current_user.moods.any? %>
       <% current_user.moods.each do |mood| %>
-        <% if !mood.comment%>
+        <% if mood.comment%>
           <p class="mt-2 mb-0"><%= mood.comment %></p>
         <% else %>
           <p class="mt-2 mb-0">No comment recorded for this mood!</p>
