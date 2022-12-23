@@ -13,3 +13,8 @@
 .active-link {
   padding-left: 10%;
 }
+
+a.active {
+  color: red;
+  font-weight: bold;
+}

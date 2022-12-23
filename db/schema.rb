@@ -10,84 +10,90 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_27_091422) do
+ActiveRecord::Schema[7.0].define(version: 20_221_027_091_422) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "drinks", force: :cascade do |t|
-    t.string "name"
-    t.text "comment"
-    t.time "time"
-    t.date "date"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_drinks_on_user_id"
+  create_table 'drinks', force: :cascade do |t|
+    t.string 'name'
+    t.text 'comment'
+    t.time 'time'
+    t.date 'date'
+    t.bigint 'user_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_drinks_on_user_id'
   end
 
-  create_table "foods", force: :cascade do |t|
-    t.string "name"
-    t.text "comment"
-    t.time "time"
-    t.date "date"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_foods_on_user_id"
+  create_table 'foods', force: :cascade do |t|
+    t.string 'name'
+    t.text 'comment'
+    t.time 'time'
+    t.date 'date'
+    t.bigint 'user_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_foods_on_user_id'
   end
 
-  create_table "medications", force: :cascade do |t|
-    t.string "name"
-    t.text "comment"
-    t.time "time"
-    t.date "date"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_medications_on_user_id"
+  create_table 'medications', force: :cascade do |t|
+    t.string 'name'
+    t.text 'comment'
+    t.time 'time'
+    t.date 'date'
+    t.bigint 'user_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_medications_on_user_id'
   end
 
-  create_table "moods", force: :cascade do |t|
-    t.integer "mood", default: 0
-    t.text "comment"
-    t.time "time"
-    t.date "date"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_moods_on_user_id"
+  create_table 'moods', force: :cascade do |t|
+    t.integer 'mood', default: 0
+    t.text 'comment'
+    t.time 'time'
+    t.date 'date'
+    t.bigint 'user_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_moods_on_user_id'
   end
 
-  create_table "symptoms", force: :cascade do |t|
-    t.integer "intensity", default: [], array: true
-    t.time "time"
-    t.date "date"
-    t.text "comment"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_symptoms_on_user_id"
+  create_table 'symptoms', force: :cascade do |t|
+    t.integer 'stomach_ache', default: 0
+    t.integer 'diarrhea', default: 0
+    t.integer 'cosntipation', default: 0
+    t.integer 'headache', default: 0
+    t.integer 'nausea', default: 0
+    t.integer 'fever', default: 0
+    t.integer 'vomiting', default: 0
+    t.time 'time'
+    t.date 'date'
+    t.text 'comment'
+    t.bigint 'user_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_symptoms_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.string "full_name"
-    t.string "uid"
-    t.string "avatar_url"
-    t.string "provider"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  create_table 'users', force: :cascade do |t|
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.string 'full_name'
+    t.string 'uid'
+    t.string 'avatar_url'
+    t.string 'provider'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['email'], name: 'index_users_on_email', unique: true
+    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
-  add_foreign_key "drinks", "users"
-  add_foreign_key "foods", "users"
-  add_foreign_key "medications", "users"
-  add_foreign_key "moods", "users"
-  add_foreign_key "symptoms", "users"
+  add_foreign_key 'drinks', 'users'
+  add_foreign_key 'foods', 'users'
+  add_foreign_key 'medications', 'users'
+  add_foreign_key 'moods', 'users'
+  add_foreign_key 'symptoms', 'users'
 end

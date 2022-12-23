@@ -67,10 +67,7 @@ class SymptomsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def symptom_params
-    # params.require(:symptom).permit(:time, :date, :comment, :user_id, intensity: [])
-
-    para = params.require(:symptom).permit(:comment, :time, :date, :user_id)
-    para[:intensity] = params[:symptom][intensity: [].to_a]
-    para
+    params.require(:symptom).permit(:time, :date, :comment, :user_id, :headache, :stomach_ache, :nausea, :vomiting,
+                                    :cosntipation, :diarrhea)
   end
 end
