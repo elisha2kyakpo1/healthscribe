@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Symptom class
 class SymptomsController < ApplicationController
   before_action :set_symptom, only: %i[show edit update destroy]
   before_action :authenticate_user!
@@ -67,7 +70,6 @@ class SymptomsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def symptom_params
-    params.require(:symptom).permit(:time, :date, :comment, :user_id, :headache, :stomach_ache, :nausea, :vomiting,
-                                    :cosntipation, :diarrhea)
+    params.require(:symptom).permit(:time, :date, :comment, :user_id, :stomach_ache, :headache, :constipation, :vomiting, :nausea, :fever, :diarrhea)
   end
 end

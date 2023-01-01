@@ -1,4 +1,4 @@
-import { Controller } from "@hotwired/stimulus"
+hamburger_menu_controller.js
 
 export default class extends Controller {
   connect() {

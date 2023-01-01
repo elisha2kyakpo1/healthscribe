@@ -4,7 +4,7 @@
       <div class='d-flex gap-2 gap-md-4 justify-content-between'>
         <div class="d-flex align-items-center active-link w-50 active">
           <%= svg_tag 'Timeline_Selected', class: "timeline" %>
-          <%= link_to 'Timeline', user_path(current_user), class: "time-insight py-3" %>
+          <%= link_to 'Timeline', user_timeline_path(current_user), class: "time-insight py-3" %>
         </div>
         <div class="d-flex align-items-center active-rink">
           <%= svg_tag 'Insights_Selected', class: "timeline" %>
@@ -13,75 +13,59 @@
       </div>
     </div>
   </div>
-  <div class ="syptom_div">
-    <div class ="symptom_data">
-    <% @items.each do |item| %>
-      <section class="gradient-custom-5">
-        <div class="container">
-          <div class="main-timeline-5">
-                <%= item.name %>
-              <% elsif item.is_a?(Food) %>
-                <%= item.name %>
-              <% elsif item.is_a?(Medication) %>
-                <%= item.name %>
-              <% elsif item.is_a?(Mood) %>
-                <%= item.name %>
-              <% end %>
-              <% end %>
-            <div class="timeline-5 right-5">
-              <div class="">
-                <div class="card-body p-4 hoverWrapper">
-                  <% if item.is_a?(Symptom) %>
-                    <%= svg_tag "Symptom", class: "show-icon"%>
-                    <h6 class="datetime text-dark">Symptom</h6>
-                    <p class="item-name"><%= item.headache %></p>
-                    <article class="d-flex flex-column align-items-center position-absolute datetime">
-                      <p class="item-name"><%= item.time.strftime("%I:%M%p") %></p>
-                    </article>                    <p class="mt-2 mb-0"><%= item.comment %></p>
-                    <div class="hoverContent rounded-1 card-action">
-                      <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hover_symptom_path(current_user) do %>
-                        Loading...
-                      <% end %>
-                    </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-
+  <% @items.each do |item| %>
+    <% if item.is_a?(Symptom) %>
       <div class ="syptom_div">
         <div class ="symptom_data">
-          <% elsif item.is_a?(Food) %>
-            <section class="gradient-custom-5">
-              <div class="container">
-                <div class="main-timeline-5">
-                  <div class="timeline-5 right-5">
-                    <div class="">
-                      <div class="card-body p-4 hoverWrapper">
-                        <%= svg_tag "Food", class: "show-icon"%>
-                        <h6 class="datetime text-dark">Food</h6>
-                        <p class="item-name"><%= item.name %></p>
-                        <article class="d-flex flex-column align-items-center position-absolute datetime">
-                          <p class="item-name"><%= item.time.strftime("%I:%M%p") %></p>
-                        </article>                    <p class="mt-2 mb-0"><%= item.comment %></p>
-                        <div class="hoverContent rounded-1 card-action">
-                          <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hover_food_path(current_user) do %>
-                            Loading...
-                          <% end %>
-                        </div>
-                      </div>
+          <section class="gradient-custom-5">
+            <div class="container">
+              <div class="main-timeline-5">
+                <div class="timeline-5 right-5">
+                  <div class="">
+                    <div class="card-body p-4 hoverWrapper">
+                      <%= svg_tag "Symptom", class: "show-icon"%>
+                      <h6 class="datetime text-dark">Symptom</h6>
+                      <p class="item-name"><%= item.name %></p>
+                      <article class="d-flex flex-column align-items-center position-absolute datetime">
+                        <p class="item-name"><%= item.time.strftime("%I:%M%p") %></p>
+                      </article>
+                      <p class="mt-2 mb-0"><%= item.comment %></p>
                     </div>
                   </div>
                 </div>
               </div>
-            </section>
+            </div>
+          </section>
         </div>
       </div>
-    <div class ="syptom_div">
-      <div class ="symptom_data">
-        <% elsif item.is_a?(Drink) %>
+    <% elsif item.is_a?(Food) %>
+      <div class ="syptom_div">
+        <div class ="symptom_data">
+          <section class="gradient-custom-5">
+            <div class="container">
+              <div class="main-timeline-5">
+                <div class="timeline-5 right-5">
+                  <div class="">
+                    <div class="card-body p-4 hoverWrapper">
+                      <%= svg_tag "Food", class: "show-icon"%>
+                      <h6 class="datetime text-dark">Food</h6>
+                      <p class="item-name"><%= item.name %></p>
+                      <article class="d-flex flex-column align-items-center position-absolute datetime">
+                        <p class="item-name"><%= item.time.strftime("%I:%M%p") %></p>
+                      </article>
+                      <p class="mt-2 mb-0"><%= item.comment %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    <% elsif item.is_a?(Drink) %>
+      <div class ="syptom_div">
+        <div class ="symptom_data">
           <section class="gradient-custom-5">
             <div class="container">
               <div class="main-timeline-5">
@@ -95,22 +79,18 @@
                         <div><%#= item.date.to_formatted_s(:rfc822) %></div>
                         <p class="item-name"><%= item.time.strftime("%I:%M%p") %></p>
                       </article>
-                      <div class="hoverContent rounded-1 card-action">
-                        <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hover_drink_path(current_user) do %>
-                          Loading...
-                        <% end %>
-                      </div>
+                      <p class="mt-2 mb-0"><%= item.comment %></p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
+        </div>
       </div>
-
-    <div class ="syptom_div">
-      <div class ="symptom_data">
-        <% elsif item.is_a?(Medication) %>
+    <% elsif item.is_a?(Medication) %>
+      <div class ="syptom_div">
+        <div class ="symptom_data">
           <section class="gradient-custom-5">
             <div class="container">
               <div class="main-timeline-5">
@@ -122,23 +102,19 @@
                       <p class="item-name"><%= item.name %></p>
                       <article class="position-absolute flex-column datetime d-flex align-items-center">
                         <p class="item-name"><%= item.time.strftime("%I:%M%p") %></p>
-                      </article>                    <p class="mt-2 mb-0"><%= item.comment %></p>
-                      <div class="hoverContent rounded-1 card-action">
-                        <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hover_medication_path(current_user) do %>
-                          Loading...
-                        <% end %>
-                      </div>
+                      </article>
+                      <p class="mt-2 mb-0"><%= item.comment %></p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
+        </div>
       </div>
-
-    <div class ="syptom_div">
-      <div class ="symptom_data">
-        <% elsif item.is_a?(Mood) %>
+    <% elsif item.is_a?(Mood) %>
+      <div class ="syptom_div">
+        <div class ="symptom_data">
           <section class="gradient-custom-5">
             <div class="container">
               <div class="main-timeline-5">
@@ -151,12 +127,7 @@
                       <article class="position-absolute flex-column datetime d-flex align-items-center">
                         <p class="item-name"><%= item.time.strftime("%I:%M%p") %></p>
                       </article>
-                      <div class="hoverContent rounded-1 card-action">
-                        
-                        <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: user_hover_mood_path(current_user) do %>
-                          Loading...
-                        <% end %>
-                      </div>
+                      <p class="mt-2 mb-0"><%= item.comment %></p>
                     </div>
                   </div>
                 </div>
@@ -164,11 +135,9 @@
             </div>
             
           </section>
-        <% end %> 
+        </div>
       </div>
     <% end %>   
-  </div>
-
-  
+  <% end %> 
   <%= link_to '<i class="text-white fa-solid fa-plus"></i>'.html_safe, entries_index_path, class: "go-to-entries position-fixed border-0"%>
 </div>

@@ -36,22 +36,25 @@
           <h5 class="mt-2">Drag the sliders to indicate the intensity</h5>
             <div class="">
                 <div class="d-flex flex-column justify-content-center justify-content-md-end gap-4 mt-4 me-4">
-                  <%= form.label :headache %>
-                  <%= form.range_field :headache, in: 0..3, class:"form-range", min:0, max:3, step:1, value:0, data: { controller: 'range-slider' } %>
-                  <span data-target="range-slider.value" data-range-slider-field="headache"></span>
-                  <%= form.label :fever%>
-                  <%= form.range_field :fever, in: 0..3, class:"form-range", min:0, max:3, step:1, value:0 %>
-
-                  <%= form.label :stomach_ache %>
-                  <%= form.range_field :stomach_ache, in: 0..3, class:"form-range", min:0, max:3, step:1, value:0 %>
-                  <%= form.label :nausea %>
-                  <%= form.range_field :nausea, in: 0..3, class:"form-range", min:0, max:3, step:1, value:0 %>
-
-                  <%= form.label :vomiting %>
-                  <%= form.range_field :vomiting, in: 0..3, class:"form-range", min:0, max:3, step:1, value:0 %>
-
-                  <%= form.label :cosntipation %>
-                  <%= form.range_field :cosntipation, in: 0..3, class:"form-range", min:0, max:3, step:1, value:0 %>
+                  <%= form.label :headache, 'Headache' %>
+                  <%= form.range_field :headache, class: "form-range", min:0, max:5, step:1, value:0 %>
+                  
+                  <%= form.label :nausea, 'Nausea' %>
+                  <%= form.range_field :nausea, class: "form-range", min:0, max:5, step:1, value:0 %>
+                  
+                  <%= form.label :vomiting, 'Vomiting' %>
+                  <%= form.range_field :vomiting, class: "form-range", min:0, max:5, step:1, value:0 %>
+                  
+                  <%= form.label :stomach_ache, 'Stomach ache' %>
+                  <%= form.range_field :stomach_ache, class: "form-range", min:0, max:5, step:1, value:0 %>
+                  
+                  <%= form.label :diarrhea, 'Diarrhea' %>
+                  <%= form.range_field :diarrhea, class: "form-range", min:0, max:5, step:1, value:0 %>
+                  
+                  <%= form.label :constipation, 'Constipation' %>
+                  <%= form.range_field :constipation, class: "form-range", min:0, max:5, step:1, value:0 %>
+                  <%= form.label :fever, 'Fever' %>
+                  <%= form.range_field :fever, class: "form-range", min:0, max:5, step:1, value:0 %>
                 </div>
               <div class="mt-5">
                 <%= form.label :comment, class: "mb-2 rounded" %>

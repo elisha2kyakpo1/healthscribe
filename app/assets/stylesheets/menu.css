@@ -22,7 +22,7 @@
 
 .popup {
   border: 1px solid rgb(217, 217, 217);
-  margin: 20px auto;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
   padding: 20px 0;
   background: #fff;
   width: 30%;
@@ -30,7 +30,7 @@
   transition: all 5s ease-in-out;
   right: 0;
   top: 45px;
-  z-index: 5;
+  z-index: 500;
 }
 
 .popup li {
