@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    @sympton_name = SymptomsController.new.columns
     @items = current_user.symptoms.order(created_at: :asc)
     @items += current_user.drinks.order(created_at: :asc)
     @items += current_user.foods.order(created_at: :asc)

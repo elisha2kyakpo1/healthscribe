@@ -14,6 +14,10 @@ class SymptomsController < ApplicationController
   # GET /symptoms/1 or /symptoms/1.json
   def show; end
 
+  def columns
+    @column_names = Symptom.column_name
+  end
+
   # GET /symptoms/new
   def new
     @symptom = Symptom.new
@@ -70,6 +74,7 @@ class SymptomsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def symptom_params
-    params.require(:symptom).permit(:time, :date, :comment, :user_id, :stomach_ache, :headache, :constipation, :vomiting, :nausea, :fever, :diarrhea)
+    params.require(:symptom).permit(:time, :date, :comment, :user_id, :stomach_ache, :headache, :constipation,
+                                    :vomiting, :nausea, :fever, :diarrhea)
   end
 end
