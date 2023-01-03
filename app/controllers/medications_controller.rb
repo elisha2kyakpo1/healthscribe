@@ -25,7 +25,7 @@ class MedicationsController < ApplicationController
     @medication = @user.medications.build(medication_params)
 
     if @medication.save
-      redirect_to user_path(current_user), notice: 'Symptom was successfully created.'
+      redirect_to timeline_path, notice: 'Symptom was successfully created.'
     else
       format.html { render :new, status: :unprocessable_entity }
       format.json { render json: @medication.errors, status: :unprocessable_entity }
@@ -36,7 +36,7 @@ class MedicationsController < ApplicationController
   def update
     respond_to do |format|
       if @medication.update(medication_params)
-        format.html { redirect_to user_path(current_user), notice: 'Medication was successfully updated.' }
+        format.html { redirect_to timeline_path, notice: 'Medication was successfully updated.' }
         format.json { render :show, status: :ok, location: @medication }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -50,7 +50,7 @@ class MedicationsController < ApplicationController
     @medication.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_path(current_user), notice: 'Medication was successfully destroyed.' }
+      format.html { redirect_to timeline_path, notice: 'Medication was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -6,6 +6,6 @@
   <div class="position-absolute action-btn d-flex justify-content-between">
   <%= link_to '<i class="fa-solid fa-pencil mr-2"></i>'.html_safe, edit_food_path(@food) %>
   <%= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, food_path(@food), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
-  <%= link_to '<i class="fa-solid fa-arrow-rotate-left"></i>'.html_safe, user_path(current_user) %>
+  <%= link_to '<i class="fa-solid fa-arrow-rotate-left"></i>'.html_safe, timeline_path %>
   </div>
 <div>

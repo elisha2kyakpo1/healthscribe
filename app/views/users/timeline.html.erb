@@ -1,14 +1,14 @@
-<div class="position-relative">
+<div class="position-relative" data-target="view.timeline">
   <div class="sign-head">
     <%= render "layouts/menu_bar" %>
       <div class='d-flex gap-2 gap-md-4 justify-content-between'>
         <div class="d-flex align-items-center active-link w-50 active">
           <%= svg_tag 'Timeline_Selected', class: "timeline" %>
-          <%= link_to 'Timeline', user_timeline_path(current_user), class: "time-insight py-3" %>
+          <%= link_to 'Timeline', timeline_path, data: { controller: "view", action: "click->view#showTimeline" }, class: "time-insight py-3" %>
         </div>
         <div class="d-flex align-items-center active-rink">
           <%= svg_tag 'Insights_Selected', class: "timeline" %>
-          <%= link_to 'Insight', entries_insight_path, class: "time-insight py-3" %>
+          <%= link_to 'Insight', symptom_analysis_path,  data: { controller: "view", action: "click->view#showAnalysis" }, class: "time-insight py-3" %>
         </div>
       </div>
     </div>

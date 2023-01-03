@@ -27,7 +27,7 @@ class DrinksController < ApplicationController
 
     respond_to do |format|
       if @drink.save
-        format.html { redirect_to user_path(current_user), notice: 'Drink was successfully created.' }
+        format.html { redirect_to timeline_path, notice: 'Drink was successfully created.' }
         format.json { render :show, status: :created, location: @drink }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class DrinksController < ApplicationController
   def update
     respond_to do |format|
       if @drink.update(drink_params)
-        format.html { redirect_to user_path(current_user), notice: 'Drink was successfully updated.' }
+        format.html { redirect_to timeline_path, notice: 'Drink was successfully updated.' }
         format.json { render :show, status: :ok, location: @drink }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class DrinksController < ApplicationController
     @drink.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_path(current_user), notice: 'Drink was successfully destroyed.' }
+      format.html { redirect_to timeline_path, notice: 'Drink was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

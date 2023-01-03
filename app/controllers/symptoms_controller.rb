@@ -33,7 +33,7 @@ class SymptomsController < ApplicationController
 
     respond_to do |format|
       if @symptom.save
-        format.html { redirect_to user_path(current_user), notice: 'Symptom was successfully created.' }
+        format.html { redirect_to timeline_path, notice: 'Symptom was successfully created.' }
         format.json { render :show, status: :created, location: @symptom }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -46,7 +46,7 @@ class SymptomsController < ApplicationController
   def update
     respond_to do |format|
       if @symptom.update(symptom_params)
-        format.html { redirect_to user_path(current_user), notice: 'Symptom was successfully updated.' }
+        format.html { redirect_to timeline_path, notice: 'Symptom was successfully updated.' }
         format.json { render :show, status: :ok, location: @symptom }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -60,7 +60,7 @@ class SymptomsController < ApplicationController
     @symptom.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_path(current_user), notice: 'Symptom was successfully destroyed.' }
+      format.html { redirect_to timeline_path, notice: 'Symptom was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
