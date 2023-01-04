@@ -1,14 +1,6 @@
 .navlist {
-  display: none;
   margin: 0;
-  box-shadow:
-  0 0.06875rem 0.0875rem rgb(4, 9, 20 / 3%),
-  0 0.0375rem 0.10625rem rgb(4, 9, 20 / 3%),
-  0 0.05rem 0.03125rem rgb(4, 9, 20 / 5%),
-  0 0.025rem 0.0875rem rgb(4, 9, 20 / 3%);
-}
-.expanded .navlist {
-  display: block;
+  padding-left: 0;
 }
 
 .name,
@@ -21,15 +13,13 @@
 }
 
 .popup {
-  border: 1px solid rgb(217, 217, 217);
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: rgb(0 0 0 / 35%) 0 6px 100px 0;
   padding: 20px 0;
   background: #fff;
   width: 30%;
   position: absolute;
-  transition: all 5s ease-in-out;
   right: 0;
-  top: 45px;
+  top: 0;
   z-index: 500;
 }
 

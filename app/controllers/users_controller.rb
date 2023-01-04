@@ -17,4 +17,8 @@ class UsersController < ApplicationController
   def insight
     render 'insight'
   end
+
+  def popup
+    render 'popup'
+  end
 end

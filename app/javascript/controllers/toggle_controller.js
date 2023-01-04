@@ -1,55 +1,48 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["menu", "modal"];
-
-  static values = {isOpen: {type: Boolean, default: false}};
-
-  connect() {
-    // console.log("Connected");
-  };
-
-  static targets = ["ariaExpander"];
+  static targets = ["menu", "ariaExpander", "popup"]
 
   toggle(event) {
-    const expandedPresent = this.element.classList.contains("expanded");
-    this.element.classList.toggle("expanded", !expandedPresent);
+    const expandedPresent = this.element.classList.contains("expanded")
+    this.element.classList.toggle("expanded", !expandedPresent)
 
-    this.ariaExpanderTargets.forEach((el) => {
-      el.setAttribute("aria-expanded", expandedPresent);
-    });
-
+    this.ariaExpanderTargets.forEach(el => {
+      el.setAttribute("aria-expanded", expandedPresent)
+    })
   }
 
   closeOnEscape(event) {
     if (event.key === "Escape") {
       if (this.element.classList.contains("expanded")) {
-        this.toggle(event);
+        this.toggle(event)
       }
     }
   }
 
-  hideModal() {
-    this.element.parentElement.removeAttribute("src")
-    // Remove src reference from parent frame element
-    // Without this, turbo won't re-open the modal on subsequent click
-    this.modalTarget.remove()
+  connect() {
+    document.addEventListener("click", this.onClick.bind(this))
   }
 
-  // hide modal when clicking ESC
-  // action: "keyup@window->turbo-modal#closeWithKeyboard"
-  closeWithKeyboard(e) {
-    if (e.code == "Escape") {
-      this.hideModal()
+  onClick(event) {
+    if (this.popupTargets && this.popupTargets.length > 0 && this.popupClose) {
+      // the popup element has the data-toggle-close attribute
+      if (!this.popupTargets[0].contains(event.target)) {
+        // the target of the click event is outside the popup element
+        this.toggleClose()
+      }
     }
   }
 
-  // hide modal when clicking outside of modal
-  // action: "click@window->turbo-modal#closeBackground"
-  closeBackground(e) {
-    if (e && this.modalTarget.contains(e.target)) {
-      return
+  toggleClose() {
+    if (this.popupTargets) {
+      this.popupTargets.forEach(element => {
+        element.classList.toggle("show")
+      })
     }
-    this.hideModal()
+  }
+
+  get popupClose() {
+    return this.popupTargets[0].getAttribute("data-toggle-close") === "true"
   }
 };
