@@ -1,8 +1,6 @@
-<div class="menu bars">
-  <div class="w-100 py-2 header d-flex align-items-center">
-    <button  class="">
-      <%= link_to 'open modal', popup_path, class: "text-white view-features", data: { turbo_frame: 'modal' } %>
-    </button>
+<div class="">
+  <div class="w-100 py-2 header d-flex align-items-center justify-content-end pl-2">
+      <%= link_to '<i class="py-3 bar text-white ml-auto fa-solid fa-bars"></i>'.html_safe, popup_path, class: "text-white", data: { turbo_frame: 'modal' } %>
   </div>
     
 </div>
