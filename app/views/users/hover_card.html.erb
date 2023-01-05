@@ -1,0 +1,22 @@
+<%= turbo_frame_tag dom_id(current_user, :thumbnail) do %>
+  <div class="">
+    <% if current_user.symptoms.any? %>
+      <% current_user.symptoms.each do |symptom| %>
+        <% if symptom.comment%>
+          <p class="mt-2 mb-0"><%= symptom.comment %></p>
+        <% else %>
+          <p class="mt-2 mb-0">No comment recorded for this symptom!</p>
+        <% end %>
+        <small><%= time_ago_in_words(symptom.created_at) %> ago </small>
+        <div class="d-flex justify-content-between align-items-center">
+          <%= link_to "Edit", edit_symptom_path(symptom), class:"editbtn" %>
+          <div class="deletebtn">
+            <%= button_to "Delete", symptom_path(symptom), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>No symptom recorded!</p>
+    <% end %>
+  </div>
+<% end %>
