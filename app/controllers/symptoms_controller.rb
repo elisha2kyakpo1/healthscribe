@@ -17,8 +17,8 @@ class SymptomsController < ApplicationController
   end
 
   def columns
-    # symptom = Symptom.first
-    Symptom.column_name(@symptoms)
+    symptom = Symptom.first
+    Symptom.column_name(symptom)
   end
 
   # GET /symptoms/new

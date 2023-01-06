@@ -26,6 +26,7 @@
                     <div class="card-body p-4 hoverWrapper">
                       <%= svg_tag "Symptom", class: "show-icon"%>
                       <h6 class="datetime text-dark">Symptom</h6>
+                      <%= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, symptom_path(item), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
                       <% @sympton_name.each do |name| %>
                       <p class="item-name"><%= name %></p>
                       <% end %>
@@ -33,12 +34,6 @@
                         <p class="item-name"><%= item.time.strftime("%I:%M%p") %></p>
                       </article>
                       <p class="mt-2 mb-0"><%= item.comment %></p>
-
-                      <div id="hoverContent" class="rounded-1 card-action">
-                        <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: hovercard_path do %>
-                        Loading...
-                        <% end %>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -58,6 +53,7 @@
                     <div class="card-body p-4 hoverWrapper">
                       <%= svg_tag "Food", class: "show-icon"%>
                       <h6 class="datetime text-dark">Food</h6>
+                      <%= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, food_path(item), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
                       <p class="item-name"><%= item.name %></p>
                       <article class="d-flex flex-column align-items-center position-absolute datetime">
                         <p class="item-name"><%= item.time.strftime("%I:%M%p") %></p>
@@ -82,6 +78,7 @@
                     <div class="card-body p-4 hoverWrapper">
                       <%= svg_tag "Drink", class: "show-icon"%>
                       <h6 class="datetime text-dark">Drink</h6>
+                            <%= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, drink_path(item), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
                       <p class="item-name"><%= item.name %></p>
                       <article class="position-absolute flex-column datetime d-flex align-items-center">
                         <div><%#= item.date.to_formatted_s(:rfc822) %></div>
@@ -107,6 +104,7 @@
                     <div class="card-body p-4 hoverWrapper">
                       <%= svg_tag "Medication", class: "show-icon"%>
                       <h6 class="datetime text-dark">Medication</h6>
+                      <%= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, medication_path(item), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
                       <p class="item-name"><%= item.name %></p>
                       <article class="position-absolute flex-column datetime d-flex align-items-center">
                         <p class="item-name"><%= item.time.strftime("%I:%M%p") %></p>
@@ -131,6 +129,7 @@
                     <div class="card-body p-4 hoverWrapper">
                       <%= svg_tag "Mood", class: "show-icon"%>
                       <h6 class="datetime text-dark">Mood</h6>
+                      <%= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, mood_path(item), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
                       <p class="item-name"><%= item.mood %></p>
                       <article class="position-absolute flex-column datetime d-flex align-items-center">
                         <p class="item-name"><%= item.time.strftime("%I:%M%p") %></p>
