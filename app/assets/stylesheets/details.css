@@ -9,6 +9,10 @@
   display: block;
 }
 
+.hoverWrapper:hover .delete {
+  display: block;
+}
+
 .deletebtn *,
 .editbtn {
   border: none;

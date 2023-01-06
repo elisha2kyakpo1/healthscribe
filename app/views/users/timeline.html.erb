@@ -26,7 +26,7 @@
                     <div class="card-body p-4 hoverWrapper">
                       <%= svg_tag "Symptom", class: "show-icon"%>
                       <h6 class="datetime text-dark">Symptom</h6>
-                      <%= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, symptom_path(item), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
+                      <%= button_to '<i class="fa-solid mx-2 fa-trash"></i>'.html_safe, symptom_path(item), class:'delete', method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
                       <% @sympton_name.each do |name| %>
                       <p class="item-name"><%= name %></p>
                       <% end %>
@@ -53,7 +53,7 @@
                     <div class="card-body p-4 hoverWrapper">
                       <%= svg_tag "Food", class: "show-icon"%>
                       <h6 class="datetime text-dark">Food</h6>
-                      <%= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, food_path(item), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
+                      <%= button_to '<i class="fa-solid mx-2 fa-trash"></i>'.html_safe, food_path(item), class:'delete', method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
                       <p class="item-name"><%= item.name %></p>
                       <article class="d-flex flex-column align-items-center position-absolute datetime">
                         <p class="item-name"><%= item.time.strftime("%I:%M%p") %></p>
@@ -77,8 +77,10 @@
                   <div class="">
                     <div class="card-body p-4 hoverWrapper">
                       <%= svg_tag "Drink", class: "show-icon"%>
-                      <h6 class="datetime text-dark">Drink</h6>
-                            <%= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, drink_path(item), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
+                      <div class="d-flex align-items-center">
+                        <h6 class="datetime text-dark">Drink</h6>
+                        <%= button_to '<i class="fa-solid mx-2  fa-trash"></i>'.html_safe, drink_path(item), class:'delete', method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
+                      </div>
                       <p class="item-name"><%= item.name %></p>
                       <article class="position-absolute flex-column datetime d-flex align-items-center">
                         <div><%#= item.date.to_formatted_s(:rfc822) %></div>
@@ -103,8 +105,10 @@
                   <div class="">
                     <div class="card-body p-4 hoverWrapper">
                       <%= svg_tag "Medication", class: "show-icon"%>
-                      <h6 class="datetime text-dark">Medication</h6>
-                      <%= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, medication_path(item), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
+                      <div class="d-flex align-items-center">
+                        <h6 class="datetime text-dark">Medication</h6>
+                        <%= button_to '<i class="fa-solid mx-2  fa-trash"></i>'.html_safe, medication_path(item), class:'delete', method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
+                      </div>
                       <p class="item-name"><%= item.name %></p>
                       <article class="position-absolute flex-column datetime d-flex align-items-center">
                         <p class="item-name"><%= item.time.strftime("%I:%M%p") %></p>
@@ -128,8 +132,10 @@
                   <div class="">
                     <div class="card-body p-4 hoverWrapper">
                       <%= svg_tag "Mood", class: "show-icon"%>
-                      <h6 class="datetime text-dark">Mood</h6>
-                      <%= button_to '<i class="fa-solid fa-trash"></i>'.html_safe, mood_path(item), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
+                      <div class="d-flex align-items-center">
+                        <h6 class="datetime text-dark">Mood</h6>
+                        <%= button_to '<i class="fa-solid mx-2  fa-trash"></i>'.html_safe, mood_path(item), class:'delete', method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}} %>
+                      </div>
                       <p class="item-name"><%= item.mood %></p>
                       <article class="position-absolute flex-column datetime d-flex align-items-center">
                         <p class="item-name"><%= item.time.strftime("%I:%M%p") %></p>
