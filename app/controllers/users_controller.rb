@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+  def hovercard
+    render 'hovercard'
+  end
+
   def show
     @user = User.find(params[:id])
     @symptom = Symptom.find(params[:id])

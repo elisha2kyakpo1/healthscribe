@@ -33,6 +33,12 @@
                         <p class="item-name"><%= item.time.strftime("%I:%M%p") %></p>
                       </article>
                       <p class="mt-2 mb-0"><%= item.comment %></p>
+
+                      <div id="hoverContent" class="rounded-1 card-action">
+                        <%= turbo_frame_tag dom_id(current_user, :thumbnail), target: "_top", loading: :lazy, src: hovercard_path do %>
+                        Loading...
+                        <% end %>
+                      </div>
                     </div>
                   </div>
                 </div>

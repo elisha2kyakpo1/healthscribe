@@ -12,10 +12,13 @@ class SymptomsController < ApplicationController
   end
 
   # GET /symptoms/1 or /symptoms/1.json
-  def show; end
+  def show
+    @symptom = Symptom.find(params[:id])
+  end
 
   def columns
-    @column_names = Symptom.column_name(@symptom)
+    # symptom = Symptom.first
+    Symptom.column_name(@symptoms)
   end
 
   # GET /symptoms/new

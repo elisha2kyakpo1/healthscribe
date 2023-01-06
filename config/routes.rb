@@ -4,11 +4,10 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  # resources :users, only: %i[timeline insight] do
   get '/timeline', to: 'users#timeline', as: 'timeline'
   get '/analysis', to: 'users#insight', as: 'symptom_analysis'
   get '/popup', to: 'users#popup'
-  # end
+  get '/hovercard', to: 'users#hovercard', as: 'hovercard'
   resources :symptoms
   resources :medications
   resources :moods
