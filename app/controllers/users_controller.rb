@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def hovercard
     render 'hovercard'
   end

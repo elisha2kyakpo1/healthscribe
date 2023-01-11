@@ -334,7 +334,7 @@ h6 {
   font-size: 20px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 620px) {
   .how-it-works {
     margin-top: 25rem;
   }
@@ -342,9 +342,7 @@ h6 {
   .two-buttons {
     flex-wrap: wrap;
   }
-}
 
-@media screen and (max-width: 768px) {
   h3,
   h6 {
   font-size: 18px;

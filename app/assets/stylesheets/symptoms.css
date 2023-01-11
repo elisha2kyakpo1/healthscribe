@@ -1,7 +1,11 @@
 .main-timeline-5 {
   position: relative;
   margin-right: auto;
-  margin-left: 25%;
+  margin-left: 15%;
+}
+
+.card-body {
+  width: 40%;
 }
 
 .datetime {
@@ -91,10 +95,10 @@ p {
   margin-right: 30px
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .main-timeline-5 {
     max-width: 100%;
-    margin-left: 5%;
+    margin-left: 10%;
   }
 
   .datetime {
@@ -103,13 +107,6 @@ p {
   }
 }
 
-@media (min-width: 992px) {
-  .main-timeline-5 {
-    max-width: 100%;
-    margin-left: 5%;
-  }
-
-}
 .gradient-custom-5 {
   background-color: #fff;
 }

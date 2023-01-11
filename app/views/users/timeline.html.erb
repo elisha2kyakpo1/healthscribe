@@ -13,7 +13,10 @@
       </div>
     </div>
   </div>
+  <%= link_to '<i class="text-white fa-solid fa-plus"></i>'.html_safe, entries_index_path, class: "go-to-entries position-fixed border-0"%>
+</div>
 
+<div class="mx-5">
   <% @items.each do |item| %>
     <% if item.is_a?(Symptom) %>
       <div class ="syptom_div">
@@ -23,7 +26,7 @@
               <div class="main-timeline-5">
                 <div class="timeline-5 right-5">
                   <div class="">
-                    <div class="card-body p-4 hoverWrapper">
+                    <div class="card-body hoverWrapper">
                       <%= svg_tag "Symptom", class: "show-icon"%>
                       <div class="d-flex align-items-center">
                         <h6 class="datetime text-dark">Symptom</h6>
@@ -52,7 +55,7 @@
               <div class="main-timeline-5">
                 <div class="timeline-5 right-5">
                   <div class="">
-                    <div class="card-body p-4 hoverWrapper">
+                    <div class="card-body hoverWrapper">
                       <%= svg_tag "Food", class: "show-icon"%>
                       <div class="d-flex align-items-center">
                         <h6 class="datetime text-dark">Food</h6>
@@ -79,7 +82,7 @@
               <div class="main-timeline-5">
                 <div class="timeline-5 right-5">
                   <div class="">
-                    <div class="card-body p-4 hoverWrapper">
+                    <div class="card-body hoverWrapper">
                       <%= svg_tag "Drink", class: "show-icon"%>
                       <div class="d-flex align-items-center">
                         <h6 class="datetime text-dark">Drink</h6>
@@ -107,7 +110,7 @@
               <div class="main-timeline-5">
                 <div class="timeline-5 right-5">
                   <div class="">
-                    <div class="card-body p-4 hoverWrapper">
+                    <div class="card-body hoverWrapper">
                       <%= svg_tag "Medication", class: "show-icon"%>
                       <div class="d-flex align-items-center">
                         <h6 class="datetime text-dark">Medication</h6>
@@ -134,7 +137,7 @@
               <div class="main-timeline-5">
                 <div class="timeline-5 right-5">
                   <div class="">
-                    <div class="card-body p-4 hoverWrapper">
+                    <div class="card-body hoverWrapper">
                       <%= svg_tag "Mood", class: "show-icon"%>
                       <div class="d-flex align-items-center">
                         <h6 class="datetime text-dark">Mood</h6>
@@ -155,6 +158,5 @@
         </div>
       </div>
     <% end %>   
-  <% end %> 
-  <%= link_to '<i class="text-white fa-solid fa-plus"></i>'.html_safe, entries_index_path, class: "go-to-entries position-fixed border-0"%>
+  <% end %>
 </div>
