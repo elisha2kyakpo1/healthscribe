@@ -1,5 +1,6 @@
 class Symptom < ApplicationRecord
   belongs_to :user
+  has_rich_text :comment
   EDITABLE_ATTRS = %i[comment headache fever stomach_ache diarrhea vomiting nausea date time]
   validates :headache, :fever, :stomach_ache, :diarrhea, :vomiting, :nausea, presence: true,
                                                                              numericality:

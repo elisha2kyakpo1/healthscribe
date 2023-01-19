@@ -74,7 +74,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-gem 'devise'
 gem 'inline_svg', '~> 1.8'
 # gem "faker"
 gem 'omniauth'
