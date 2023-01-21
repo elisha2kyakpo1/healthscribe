@@ -10,7 +10,6 @@ class CreateSymptoms < ActiveRecord::Migration[7.0]
       t.integer :nausea, in: 0..5, default: 0
       t.time :time
       t.date :date
-      t.text :comment
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
