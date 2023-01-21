@@ -75,7 +75,7 @@ group :test do
   gem 'webdrivers'
 end
 gem 'inline_svg', '~> 1.8'
-# gem "faker"
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
+gem 'ruby-vips'
